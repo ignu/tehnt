@@ -9,7 +9,9 @@ describe User do
       :email => 'ignu.smith@gmail.com',
       :crypted_password => 'pass',
       :password_salt => 'sale',
-      :persistence_token => 'what'
+      :persistence_token => 'what',
+      :single_access_token => 'huh',
+      :perishable_token => 'hm'
     }
   end
 
