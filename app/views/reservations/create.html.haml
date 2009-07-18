@@ -1,2 +1,18 @@
-=flash[:success]
-=flash[:error]
+%p We have the following information:
+%p 
+  Date of reservation
+  =@reservation.start_date.strftime("%x") 
+  thru
+  =@reservation.end_date.strftime("%x")
+   
+%p
+  Campsites
+  -for campsite in @reservation.campsites
+    .campsite=campsite.name 
+    
+%p
+  Adults listed on reservation
+  -for registrant in @reservation.registrants
+    .registrant
+      =registrant.first_name
+      =registrant.last_name 

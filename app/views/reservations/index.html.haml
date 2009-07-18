@@ -1,13 +1,14 @@
 .title= "Reservations for #{@campground.name}"
 -form_tag '/reservations/new', :method=> :post do 
-
+  =hidden_field :dates, :reservation_start_date, :value=> @start_date.to_s
+  =hidden_field :dates, :reservation_end_date, :value=> @end_date.to_s
   -for campsite in @campsites
     %h2= campsite.name  
-    %span.beds= "#{campsite.beds} beds"
-    - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+    %span.beds= "#{campsite.beds} beds."
+    - reservations = campsite.reservations.for_date_requested(@start_date, @end_date) 
     -if reservations.empty?
       
-      %span.available="check to reserve "
+      %span.available=" Check to reserve "
       =check_box :selected_campsites, campsite.id
 
     -else 
