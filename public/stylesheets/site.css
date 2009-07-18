@@ -848,3 +848,17 @@ hr.space {
     height: 120px; }
 
 .campHere { color:#559; cursor:pointer; }
+
+#reservation_dates { display:none;}
+.promoteZ {z-index: 2006; /* Dialog z-index is 1006*/}
+#endDateDiv { float:right; margin-right:20px;}
+
+#messageDiv {
+    left:0;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    font-size:1.5em;
+    z-index:2009;
+}
