@@ -32,6 +32,22 @@ tehnt.selectReservationDates = function(campground_id, campground_name) {
 
 tehnt.submitReservation = function() {
 
+    var dates = tehnt.submitReservation.getValidDates();
+    if (!dates) return false;
+    var startDate = dates.startDate;
+    var endDate = dates.endDate;
+    
+    window.location = '/campgrounds/' +
+        tehnt.currentCampgroundId + '/reservations/start/' +
+              startDate.getFullYear() + "/" +
+              (startDate.getMonth() + 1) + "/" +
+              startDate.getDate() + "/end/" +
+              endDate.getFullYear() + "/" +
+              (endDate.getMonth() + 1) + "/" +
+              endDate.getDate();
+};
+
+tehnt.submitReservation.getValidDates = function() {
     var startDate = $('#startDate').datepicker('getDate');
     var endDate = $('#endDate').datepicker('getDate');
 
@@ -46,22 +62,15 @@ tehnt.submitReservation = function() {
     }
 
     // TODO:
-    // HACK: should get this server site    
+    // HACK: should get this server site
     var cutoff_date =new Date(new Date().setDate(new Date().getDate()+3));
 
     if (startDate < cutoff_date) {
       tehnt.showMessage("Reservations must be made at least three days in advance.");
       return false;
     }
-    
-    window.location = '/campgrounds/' +
-        tehnt.currentCampgroundId + '/reservations/start/' +
-              startDate.getFullYear() + "/" +
-              (startDate.getMonth() + 1) + "/" +
-              startDate.getDate() + "/end/" +
-              endDate.getFullYear() + "/" +
-              (endDate.getMonth() + 1) + "/" +
-              endDate.getDate();
+
+    return {startDate:startDate, endDate:endDate};
 };
 
 tehnt.showMessage = function(data) {
