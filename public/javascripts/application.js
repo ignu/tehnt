@@ -44,15 +44,15 @@ tehnt.submitReservation = function() {
       tehnt.showMessage("Start date must be before the End Date.");
       return false;
     }
-
-    log(startDate.getMonth() + 1);
-
-    log(startDate.getDate());
-    log(startDate.getFullYear());
-
-    
-
-
+   
+    window.location = '/campgrounds/' +
+        tehnt.currentCampgroundId + '/reservations/start/' +
+              startDate.getFullYear() + "/" +
+              (startDate.getMonth() + 1) + "/" +
+              startDate.getDate() + "/end/" +
+              endDate.getFullYear() + "/" +
+              (endDate.getMonth() + 1) + "/" +
+              endDate.getDate();
 };
 
 tehnt.showMessage = function(data) {
