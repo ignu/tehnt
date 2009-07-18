@@ -5,8 +5,13 @@
     = javascript_include_tag 'jquery'
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'site.css', :media => 'screen, projection'
+    = render :partial => 'layouts/header'
   %body
     -if flash[:notice]
       .notice=flash[:notice]
+    -if flash[:error]
+      .notice=flash[:error]
+    -if flash[:success]
+      .notice=flash[:success] 
     #container
       = yield

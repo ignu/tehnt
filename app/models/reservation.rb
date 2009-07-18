@@ -1,7 +1,6 @@
 class Reservation < ActiveRecord::Base 
   has_many :registrants
   has_one :campsite  
-  accepts_nested_attributes_for :registrants
   validates_presence_of :start_date          
   validates_presence_of :end_date            
   validates_presence_of :group_type          
