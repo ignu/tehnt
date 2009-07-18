@@ -1,8 +1,12 @@
+%h3 You are reserving for the following Campsites
+%p
+  -for campsite in @campsites
+    .campsite=campsite.name 
+
 -form_for Reservation.new do |f|
-  -@campsites.keys.each do |key|
-    -if @campsites[key] == "1"
-      =hidden_field :selected_campsites, @campsites[key]
-  %div{:style=>"float:left; width:400px"}
+  -@campsites.each do |site|
+    =hidden_field :selected_campsites, :site, :value => site.id
+  %div{:style=>"float:left; width:600px"}
     %table
       %tr
         %td Group Type
@@ -21,13 +25,14 @@
         %td=f.text_field :other_group_name
       %tr
         %td Start Date
-        %td=f.date_select :start_date
+        %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date
       %tr
         %td End Date
-        %td=f.date_select :end_date
+        %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date
       %tr 
-  %div{:style=>"float:left; width:400px"}
-    ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)**
+      
+    %h3 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)** 
+    %h3 First Adult
     %table
       %tr
         %td First Name
@@ -47,6 +52,9 @@
       %tr
         %td City
         %td=text_field :reg1, :city   
+    
+    %table
+      %h3 Second Adult
       %tr
         %td First Name
         %td=text_field :reg2, :first_name
