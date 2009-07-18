@@ -1,0 +1,2 @@
+module CampgroundsHelper
+end

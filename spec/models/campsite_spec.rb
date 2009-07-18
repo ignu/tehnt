@@ -1,16 +1,20 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe User do
+describe Campsite do
+
+  it { should belong_to(:campground) }
+  
   before(:each) do
     @valid_attributes = {
-      :first_name => 'len' ,
-      :last_name => 'smith',
-      :login => 'ignu',
-      :email => 'ignu.smith@gmail.com'    
+      :name => 'my name',
+      :beds => 3,
+      :price => 40.00
     }
   end
 
   it "should create a new instance given valid attributes" do
-    User.create!(@valid_attributes)
+    Campsite.create!(@valid_attributes)
   end
+
+  
 end

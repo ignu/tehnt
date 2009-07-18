@@ -25,3 +25,26 @@ Migrating to CreateRegistrants (20090718030916)
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("registrants")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("reservations")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing RegistrationController#index (for ::1 at 2009-07-17 23:53:27) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: new):
+  haml (2.0.9) rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing RegistrationController#index (for ::1 at 2009-07-17 23:54:10) [GET]
+Rendering registration/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/registration]

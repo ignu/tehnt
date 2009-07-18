@@ -2,3 +2,4 @@
 log
 .sqlite
 *.sqlite3
+db/schema.rb
