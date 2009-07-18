@@ -859,5 +859,6 @@ hr.space {
     text-align:center;
     top:0;
     width:100%;
-    font-size:1.2em;
+    font-size:1.5em;
+    z-index:2009;
 }
