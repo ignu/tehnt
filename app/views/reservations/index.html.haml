@@ -2,19 +2,10 @@
 -for campsite in @campsites
   %h2= campsite.name  
   %span.beds= "#{campsite.beds} beds"
-  - reservations = campsite.reservations.for_week_of(@year,@month,@day) 
+  - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
   -if reservations.empty?
     %span.available="are available this week"
+    =button_to "Reserve", "/campsite/#{campsite.id}/reservation/new" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
   -else 
-    -for reservation in reservations
-      Reserved
-      %p.reservations
-        Type:
-        = reservation.group_type 
-      %p.reservations
-        Start Date:
-        = reservation.start_date   
-      %p.reservations
-        End Date:
-        = reservation.end_date  
+    RESERVED
        

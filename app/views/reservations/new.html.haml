@@ -1,0 +1,42 @@
+-form_for Reservation.new do |f|
+  %p
+    Group Type
+    =f.text_field :group_type
+  %p
+    Group Number
+    =f.text_field :group_number
+  %p
+    Council Name
+    =f.text_field :council_name
+  %p
+    District Name
+    =f.text_field :district_name
+  %p
+    Other Group Name
+    =f.text_field :other_group_name
+  %p
+    Start Date
+    =f.date_select :start_date
+  %p
+    End Date
+    =f.date_select :end_date
+  -f.fields_for :registrants do |r| 
+    %p
+      First Name
+      =r.text_field :first_name
+    %p 
+      Last Name
+      =r.text_field :last_name
+    %p 
+      Address
+      =r.text_field :address
+    %p
+      Zip
+      =r.text_field :zip
+    %p
+      State
+      =r.text_field :address_state
+    %p
+      City
+      =r.text_field :city
+     

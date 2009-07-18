@@ -3,7 +3,8 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'campgrounds',
     :action => 'list'
   }) 
-  map.resources :reservation
+
+  map.resources :reservations
   map.resources :campsites
   map.index_campsite('/campgrounds/:campground_name/campsites/', {
           :controller => 'campsites',
@@ -11,8 +12,8 @@ ActionController::Routing::Routes.draw do |map|
           :conditions => {:method=>:get}
     })
   map.resources :campgrounds, :has_many => [:reservations, :campsites]
-
-  map.list_reservations '/campgrounds/:campground_id/reservations/:year/:month/:day/', :controller => 'reservations', :action => 'index'
+  map.list_reservations '/campgrounds/:campground_id/reservations/start/:s_year/:s_month/:s_day/end/:e_year/:e_month/:e_day/', :controller => 'reservations', :action => 'index'
+  map.new_reservation '/campsite/:campsite_id/reservation/new/start/:s_year/:s_month/:s_day/end/:e_year/:e_month/:e_day/', :controller => 'reservations', :action => 'new', :conditions => {:method => :post}
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
