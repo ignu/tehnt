@@ -1,0 +1,12 @@
+!!! Strict
+%html
+  %head
+    %title Great Sauk Trail Council 
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag 'site.css', :media => 'screen, projection'
+  %body
+    -if flash[:notice]
+      .notice=flash[:notice]
+    #container
+      = yield
