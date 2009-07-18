@@ -2770,3 +2770,1689 @@ Rendering reservations/index
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
 Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/year/2009/month/07/day/18]
+
+
+Processing CampgroundsController#index (for ::1 at 2009-07-18 11:34:41) [GET]
+  [4;36;1mCampground Load (1.0ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://localhost/campgrounds]
+
+
+Processing CampgroundsController#index (for ::1 at 2009-07-18 11:34:43) [GET]
+  [4;35;1mCampground Load (0.6ms)[0m   [0mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/campgrounds]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:34:44) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.6ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.3ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 115ms (View: 68, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:35:53) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 33ms (View: 22, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:37:30) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+
+ActionView::TemplateError (undefined method `button' for #<ActionView::Base:0x2834508>) on line #8 of app/views/reservations/index.html.haml:
+5:   - reservations = campsite.reservations.for_week_of(@year,@month,@day) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button "Reserve", "campsite/#{campsite.id}/reservations/new/2009/07/18"
+9:   -else 
+10:     -for reservation in reservations
+11:       Reserved
+
+    app/views/reservations/index.html.haml:8:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:38:07) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 89ms (View: 80, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 11:38:09) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/2009/07/campsite/2/reservations/new/2009/07/18" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:39:45) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.7ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 93ms (View: 66, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 11:39:47) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/2009/07/campsite/2/reservations/new/2009/07/18" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:40:29) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.3ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.6ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 90ms (View: 65, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:40:30) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.3ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 11:40:33) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/2009/07/campsite/2/reservations/new/2009/07/18" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:41:03) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.5ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 95ms (View: 83, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:41:04) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 11:41:05) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campsite/2/reservations/new/2009/07/18" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:41:26) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 29ms (View: 20, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 11:41:27) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 11:41:29) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+
+ActiveRecord::RecordNotFound (Couldn't find Campground without an ID):
+  app/controllers/reservations_controller.rb:17:in `find_campground'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 11:42:07) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+
+SyntaxError (/Users/aaronw/Sites/tehnt/app/controllers/reservations_controller.rb:2: syntax error, unexpected ':', expecting kEND
+  before_filter :find_campground :only => [:index]
+                                  ^):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for ::1 at 2009-07-18 11:42:12) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+
+SyntaxError (/Users/aaronw/Sites/tehnt/app/controllers/reservations_controller.rb:2: syntax error, unexpected ':', expecting kEND
+  before_filter :find_campground :only => [:index]
+                                  ^):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 11:42:23) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/campsite/2/reservation/new/2009/07/18]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 11:48:27) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+Rendering template within layouts/application
+Rendering reservations/new
+
+ActionView::TemplateError (undefined method `reservations_path' for #<ActionView::Base:0x2829ce8>) on line #1 of app/views/reservations/new.html.haml:
+1: -form_for Reservation.new do |f|
+2:   %p
+3:     Group Type
+4:     =f.text_field :group_type
+
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:167:in `form_for'
+    app/views/reservations/new.html.haml:1:in `_run_haml_app47views47reservations47new46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 11:49:04) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 67ms (View: 65, DB: 0) | 200 OK [http://localhost/campsite/2/reservation/new/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 12:17:58) [GET]
+
+ActionController::RoutingError (No route matches "/campground/1" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 12:18:46) [GET]
+
+ActionController::RoutingError (No route matches "/campground/1/reservations/ew" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 12:18:49) [GET]
+
+ActionController::RoutingError (No route matches "/campground/1/reservations/new" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 13:07:57) [GET]
+
+ActionController::RoutingError (No route matches "/campground/1/reservations/new" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 13:08:06) [GET]
+  [4;36;1mCampground Load (0.6ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 13:08:08) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.6ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `accept_nested_attributes_for' for #<Class:0x2685f7c>) on line #5 of app/views/reservations/index.html.haml:
+2: -for campsite in @campsites
+3:   %h2= campsite.name  
+4:   %span.beds= "#{campsite.beds} beds"
+5:   - reservations = campsite.reservations.for_week_of(@year,@month,@day) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button_to "Reserve", "/campsite/#{campsite.id}/reservation/new/2009/07/18"
+
+    app/models/reservation.rb:4
+    app/views/reservations/index.html.haml:5:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.8ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 13:09:41) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 13:10:04) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 13:10:23) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 29ms (View: 18, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/2009/07/18]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 13:34:27) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+Rendering template within layouts/application
+Rendering reservations/new
+
+ActionView::TemplateError (undefined method `end_dat' for #<Reservation:0x2802350>) on line #22 of app/views/reservations/new.html.haml:
+19:     =f.date_select :start_date
+20:   %p
+21:     End Date
+22:     =f.date_select :end_dat
+23:   -f.fields_for :registrants do |r| 
+24:     %p
+25:       First Name
+
+    app/views/reservations/new.html.haml:22:in `_run_haml_app47views47reservations47new46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:161:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:161:in `form_for'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers.rb:527:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers.rb:527:in `haml_bind_proc'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:167:in `form_for'
+    app/views/reservations/new.html.haml:1:in `_run_haml_app47views47reservations47new46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 13:34:38) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"2"}
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://localhost/campsite/2/reservation/new/2009/07/18]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 13:35:32) [POST]
+  Parameters: {"month"=>"07", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "day"=>"18", "year"=>"2009", "campsite_id"=>"3"}
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/campsite/3/reservation/new/2009/07/18]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:00:34) [GET]
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/2009/07/18" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:00:36) [GET]
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/2009/07/18" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:01:18) [GET]
+  [4;36;1mCampground Load (1.2ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+
+ActionView::TemplateError (The line was indented 17 levels deeper than the previous line.) on line #9 of app/views/campgrounds/list.haml:
+6:   %h2= campground.name
+7:   %span.description= campground.description
+8:   =button_to "Check availability", "/campgrounds/#{campground.id}/reservations" +
+9:                                     "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" +
+10:                                     "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}", :method=>:get
+11:   
+12: 
+
+    app/views/campgrounds/list.haml:9
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/precompiler.rb:171:in `precompile'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/engine.rb:112:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/haml/template/plugin.rb:21:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/campgrounds_controller.rb:15:in `list'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:01:19) [GET]
+  [4;35;1mCampground Load (0.6ms)[0m   [0mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+
+ActionView::TemplateError (The line was indented 17 levels deeper than the previous line.) on line #9 of app/views/campgrounds/list.haml:
+6:   %h2= campground.name
+7:   %span.description= campground.description
+8:   =button_to "Check availability", "/campgrounds/#{campground.id}/reservations" +
+9:                                     "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" +
+10:                                     "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}", :method=>:get
+11:   
+12: 
+
+    app/views/campgrounds/list.haml:9
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/precompiler.rb:171:in `precompile'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/engine.rb:112:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/haml/template/plugin.rb:21:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/haml/template/plugin.rb:21:in `compile'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/campgrounds_controller.rb:15:in `list'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:01:52) [GET]
+  [4;36;1mCampground Load (0.6ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:01:54) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mReservation Load (0.2ms)[0m   [0;1mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 186ms (View: 168, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/18]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:02:35) [GET]
+  Parameters: {"month"=>"07", "day"=>"18", "year"=>"2009", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mReservation Load (0.2ms)[0m   [0mSELECT * FROM "reservations" WHERE ("reservations".campsite_id = 1) AND ((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '28') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/18]
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:02:37) [GET]
+  [4;35;1mCampground Load (0.5ms)[0m   [0mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:03:29) [GET]
+  [4;36;1mCampground Load (0.6ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+
+ActionView::TemplateError (can't convert Fixnum into String) on line #8 of app/views/campgrounds/list.haml:
+5: - @campgrounds.each do |campground|
+6:   %h2= campground.name
+7:   %span.description= campground.description
+8:   =button_to "Check availability", "/campgrounds/#{campground.id}/reservations" + "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" + "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')+7}", :method=>:get  
+9:   
+10: 
+11: 
+
+    app/views/campgrounds/list.haml:8:in `+'
+    app/views/campgrounds/list.haml:8:in `_run_haml_app47views47campgrounds47list46haml'
+    app/views/campgrounds/list.haml:5:in `each'
+    app/views/campgrounds/list.haml:5:in `_run_haml_app47views47campgrounds47list46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/campgrounds_controller.rb:15:in `list'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:04:08) [GET]
+  [4;35;1mCampground Load (0.7ms)[0m   [0mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+ERROR: compiling _run_haml_app47views47campgrounds47list46haml RAISED compile error
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:8: syntax error, unexpected '}', expecting ')'
+....days.from_now.strftime('%d')}", :method=>:get
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:9: syntax error, unexpected ',', expecting ')'
+... = nil; haml_very_temp));}\n", 0, false);end;@haml_buffer = ...
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:9: syntax error, unexpected kEND, expecting '}'
+...ery_temp));}\n", 0, false);end;@haml_buffer = @haml_buffer.u...
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:10: syntax error, unexpected kENSURE, expecting '}'
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:12: syntax error, unexpected kEND, expecting '}'
+Function body:           def _run_haml_app47views47campgrounds47list46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:ugly=>false, :format=>:xhtml, :attr_wrapper=>"'", :encoding=>nil, :preserve=>["textarea", "pre"], :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"]});_erbout = _hamlout.buffer;__in_erb_template = true;;
+
+
+
+_hamlout.push_text("<div class='title'>\n  <h1>Campgrounds</h1>\n</div>\n<div id='campgrounds'></div>\n", 0, false); @campgrounds.each do |campground|;
+_hamlout.push_text("<h2>#{_hamlout.adjust_tabs(1); haml_temp = campground.name
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</h2>\n<span class='description'>#{_hamlout.adjust_tabs(1); haml_temp = campground.description
+_hamlout.format_script_false_true_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}</span>\n#{haml_temp = button_to "Check availability", "/campgrounds/#{campground.id}/reservations" + "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" + "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{(7.days.from_now.strftime('%d')}", :method=>:get
+_hamlout.format_script_false_false_false_false_false_true_false((haml_very_temp = haml_temp; haml_temp = nil; haml_very_temp));}\n", 0, false);end;@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:12:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render_without_haml'
+/opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:943:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/aaronw/Sites/tehnt/app/controllers/campgrounds_controller.rb:15:in `list'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1322:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/../lib/sass/plugin/rails.rb:19:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:8: syntax error, unexpected '}', expecting ')'
+....days.from_now.strftime('%d')}", :method=>:get
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:9: syntax error, unexpected ',', expecting ')'
+... = nil; haml_very_temp));}\n", 0, false);end;@haml_buffer = ...
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:9: syntax error, unexpected kEND, expecting '}'
+...ery_temp));}\n", 0, false);end;@haml_buffer = @haml_buffer.u...
+                              ^
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:10: syntax error, unexpected kENSURE, expecting '}'
+/Users/aaronw/Sites/tehnt/app/views/campgrounds/list.haml:12: syntax error, unexpected kEND, expecting '}') on line #8 of app/views/campgrounds/list.haml:
+5: - @campgrounds.each do |campground|
+6:   %h2= campground.name
+7:   %span.description= campground.description
+8:   =button_to "Check availability", "/campgrounds/#{campground.id}/reservations" + "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" + "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{(7.days.from_now.strftime('%d')}", :method=>:get  
+9:   
+10: 
+11: 
+
+    app/views/campgrounds/list.haml:12:in `compile!'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/campgrounds_controller.rb:15:in `list'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CampgroundsController#list (for ::1 at 2009-07-18 14:04:35) [GET]
+  [4;36;1mCampground Load (0.5ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:04:36) [GET]
+  Parameters: {"month"=>"07", "day"=>"25", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:05:16) [GET]
+  Parameters: {"month"=>"07", "day"=>"25", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 86ms (View: 77, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:05:33) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campsite/1/reservation/new/2009/07/18" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:05:35) [GET]
+  Parameters: {"month"=>"07", "day"=>"25", "year"=>"2009", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.4ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+  [4;36;1mCampsite Load (0.6ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((strftime('%W', start_date) = '29') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 33ms (View: 21, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:13:32) [GET]
+  Parameters: {"s_year"=>"2009", "s_month"=>"07", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:25:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (85.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:15:06) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:25:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:15:09) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:25:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:18:19) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:26:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:18:40) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:26:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:18:51) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:26:in `get_start_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:20:52) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:30:in `get_end_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:20:53) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+
+ArgumentError (comparison of String with 0 failed):
+  /opt/local/lib/ruby/1.8/date.rb:621:in `<'
+  /opt/local/lib/ruby/1.8/date.rb:621:in `valid_civil?'
+  /opt/local/lib/ruby/1.8/date.rb:751:in `new'
+  app/controllers/reservations_controller.rb:30:in `get_end_date'
+  /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:21:26) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+2009, 07, 25
+  [4;36;1mCampsite Load (0.6ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+
+ActionView::TemplateError (/Users/aaronw/Sites/tehnt/app/models/reservation.rb:14: syntax error, unexpected tIDENTIFIER, expecting ']'
+    :conditions => ["start_date = ?" start_date ]
+                                               ^) on line #5 of app/views/reservations/index.html.haml:
+2: -for campsite in @campsites
+3:   %h2= campsite.name  
+4:   %span.beds= "#{campsite.beds} beds"
+5:   - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button_to "Reserve", "/campgrounds/#{campground.id}/reservations" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
+
+    app/views/reservations/index.html.haml:5:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:21:47) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+2009, 07, 25
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-25') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+
+ActionView::TemplateError (undefined local variable or method `campground' for #<ActionView::Base:0x26f087c>) on line #8 of app/views/reservations/index.html.haml:
+5:   - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button_to "Reserve", "/campgrounds/#{campground.id}/reservations" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
+9:   -else 
+10:     RESERVED
+11:        
+
+    app/views/reservations/index.html.haml:8:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:22:16) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+2009, 07, 25
+  [4;35;1mCampsite Load (0.6ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-25') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.strftime) on line #8 of app/views/reservations/index.html.haml:
+5:   - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button_to "Reserve", "/campgrounds/#{@campground.id}/reservations" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
+9:   -else 
+10:     RESERVED
+11:        
+
+    app/views/reservations/index.html.haml:8:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:23:07) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 
+  [4;36;1mCampsite Load (0.6ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-25') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.strftime) on line #8 of app/views/reservations/index.html.haml:
+5:   - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+6:   -if reservations.empty?
+7:     %span.available="are available this week"
+8:     =button_to "Reserve", "/campgrounds/#{@campground.id}/reservations" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
+9:   -else 
+10:     RESERVED
+11:        
+
+    app/views/reservations/index.html.haml:8:in `_run_haml_app47views47reservations47index46html46haml'
+    app/views/reservations/index.html.haml:2:in `_run_haml_app47views47reservations47index46html46haml'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/lib/haml/helpers/action_view_mods.rb:13:in `render'
+    /opt/local/lib/ruby/gems/1.8/gems/haml-edge-2.3.15/rails/./lib/sass/plugin/rails.rb:19:in `process'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:24:00) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:24:02) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (0.5ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:24:05) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (0.6ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 86ms (View: 75, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:24:21) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (2.1ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 46ms (View: 30, DB: 3) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:24:23) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservations/new/start/2009/07/18/end/2009/07/25" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:24:41) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (0.7ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 50ms (View: 28, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:24:42) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservation/new/start/2009/07/18/end/2009/07/25" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:25:02) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (0.6ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 61ms (View: 28, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ApplicationController#index (for ::1 at 2009-07-18 14:25:03) [POST]
+  Parameters: {"authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo="}
+
+ActionController::RoutingError (No route matches "/campgrounds/1/reservation/start/2009/07/18/end/2009/07/25" with {:method=>:post}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:26:00) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;36;1mCampground Load (0.2ms)[0m   [0;1mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;35;1mCampsite Load (2.3ms)[0m   [0mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 56ms (View: 34, DB: 4) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 14:26:01) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "campsite_id"=>"1", "s_day"=>"18"}
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 95ms (View: 92, DB: 0) | 200 OK [http://localhost/campsite/1/reservation/new/start/2009/07/18/end/2009/07/25]
+
+
+Processing CampgroundsController#index (for ::1 at 2009-07-18 14:26:13) [GET]
+  [4;36;1mCampground Load (0.6ms)[0m   [0;1mSELECT * FROM "campgrounds" [0m
+Rendering template within layouts/application
+Rendering campgrounds/list
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/campgrounds]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:26:16) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 82ms (View: 72, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 14:26:22) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "campsite_id"=>"1", "s_day"=>"18"}
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/campsite/1/reservation/new/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#index (for ::1 at 2009-07-18 14:26:35) [GET]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "e_month"=>"07", "s_day"=>"18", "campground_id"=>"1"}
+  [4;35;1mCampground Load (0.2ms)[0m   [0mSELECT * FROM "campgrounds" WHERE ("campgrounds"."id" = 1) [0m
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+  [4;36;1mCampsite Load (0.5ms)[0m   [0;1mSELECT * FROM "campsites" WHERE ("campsites".campground_id = 1) [0m
+Rendering template within layouts/application
+Rendering reservations/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 1)) AND ("reservations".campsite_id = 1)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 2)) AND ("reservations".campsite_id = 2)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 3)) AND ("reservations".campsite_id = 3)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 4)) AND ("reservations".campsite_id = 4)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 5)) AND ("reservations".campsite_id = 5)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reservations" WHERE (((start_date = '2009-07-18') AND ("reservations".campsite_id = 6)) AND ("reservations".campsite_id = 6)) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/campgrounds/1/reservations/start/2009/07/18/end/2009/07/25]
+
+
+Processing ReservationsController#new (for ::1 at 2009-07-18 14:26:37) [POST]
+  Parameters: {"s_month"=>"07", "s_year"=>"2009", "e_year"=>"2009", "e_day"=>"25", "authenticity_token"=>"gR3TTLpEfmB4e/PnVM9vwXABsCxYW4N0yZAJP5X+2Wo=", "e_month"=>"07", "campsite_id"=>"1", "s_day"=>"18"}
+2009, 07, 18
+Start date = 2009-07-18
+2009, 07, 25
+End date = 2009-07-25
+Rendering template within layouts/application
+Rendering reservations/new
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/campsite/1/reservation/new/start/2009/07/18/end/2009/07/25]
