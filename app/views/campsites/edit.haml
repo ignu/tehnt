@@ -1,6 +1,7 @@
 %h2 Add a new Camp Site
 
-%form{:action => "/save", :method => 'post'}
+%form{:action => "/campsites/save", :method => 'post'}
+  %input{:type => 'hidden', :name => 'authenticity_token', :value => self.form_authenticity_token}
   -if @campsite.id
     %input{:type=>'hidden', name=>"campsite[id]"}
 

@@ -15,7 +15,6 @@ describe CampsitesController do
   end
 
   describe "save, with valid data"  do
-
     before(:each) do
       @params = {:name => 'a site', :beds=> 4, :price => 34.23}
       @campsite = mock_model(Campsite)
@@ -25,13 +24,16 @@ describe CampsitesController do
     end
 
     it { should assign_to(:campsite) }
-    it { should respond_with(:success) }
-
+    it { should respond_with(:redirect) }
   end
 
   describe "routing" do
-   it "connect /campsites/new to new" do
+   it "connects /campsites/new to new" do
      params_from(:get, "/campsites/new").should == {:controller => 'campsites', :action => 'new'}
+   end
+
+   it "connects /campsites/save to save" do
+     params_from(:post, "/campsites/save").should == {:controller => 'campsites', :action => 'save'}
     end
   end
 end

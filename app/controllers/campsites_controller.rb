@@ -7,7 +7,7 @@ class CampsitesController < ApplicationController
   def save
     @campsite = Campsite.new(self.params[:campsite])
     @campsite.save!
-    render 'edit'
+    redirect_to '/campsites/new'        
   end
 
   def list
