@@ -1,7 +1,12 @@
 .title
-	%h1 I want to camp on {pick day}
-	
-at
+  %h1 I want to camp on {pick day}
+
+#campgrounds
+- @campgrounds.each do |campground|
+  %h2= campground.name
+  %span.description= campground.description
+
+  
 
 
 
