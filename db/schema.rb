@@ -9,11 +9,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090718015244) do
+ActiveRecord::Schema.define(:version => 20090718030916) do
 
   create_table "campgrounds", :force => true do |t|
     t.string   "name",        :null => false
     t.string   "description", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "registrants", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "zip"
+    t.string   "address_state"
+    t.string   "city"
+    t.string   "position"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reservations", :force => true do |t|
+    t.string   "group_type"
+    t.integer  "group_number"
+    t.string   "council_name"
+    t.string   "district_name"
+    t.string   "other_group_name"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,7 +8,6 @@ class Reservation < ActiveRecord::Base
   validates_presence_of :other_group_name    
   validates_format_of :zip, 
                       :with => /\d\d\d\d\d/, 
-                      :message => I18n.t('sharespost.registration.errors.five-digit-zip'), 
                       :allow_blank => true  
 
   
