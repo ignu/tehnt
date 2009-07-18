@@ -3,10 +3,15 @@
   %head
     %title Great Sauk Trail Council 
     = javascript_include_tag 'jquery'
+    = javascript_include_tag 'jquery.ui'
     = javascript_include_tag 'application'
+    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.7.2.custom.css', :media => 'screen, projection' 
     = stylesheet_link_tag 'site.css', :media => 'screen, projection'
   %body
     -if flash[:notice]
       .notice=flash[:notice]
+    #messageDiv
+      #flashMessage
+
     #container
       = yield

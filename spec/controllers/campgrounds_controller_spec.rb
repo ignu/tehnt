@@ -2,25 +2,20 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe CampgroundsController do
 
-
   #Delete these examples and add some real ones
   it "should use CampgroundsController" do
     controller.should be_an_instance_of(CampgroundsController)
   end
 
-
   describe "list" do
-
     before(:each) do
       campgrounds = mock_model(Array)
       Campground.should_receive(:all).and_return(campgrounds)
       get 'list'
     end
-
     it { should assign_to(:campgrounds)     }
     it { should render_template('list')     }
     it { should respond_with(:success)      }
-
   end
 
  end
