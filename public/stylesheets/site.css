@@ -65,9 +65,8 @@ h2 {
   font-weight: normal;
   color: #222222;
   font-size: 2em;
-  margin-bottom: 0;
-  margin-top: 4px;
-}
+  margin-top:5px;
+  margin-bottom: 1px; }
 
 h3 {
   font-weight: normal;
@@ -847,3 +846,5 @@ hr.space {
       overflow-x: hidden; }
   #container #comments textarea {
     height: 120px; }
+
+.campHere { color:#559; cursor:pointer; }

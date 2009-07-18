@@ -1,10 +1,11 @@
 .title
-  %h1 I want to camp on {pick day}
+  %h1 Campgrounds
 
 #campgrounds
 - @campgrounds.each do |campground|
   %h2= campground.name
   %span.description= campground.description
+  %span.campHere{:campgound=>campground.name} Camp&nbsp;Here
 
   
 
