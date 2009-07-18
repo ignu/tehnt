@@ -1,5 +1,13 @@
 ground1:
   id: 1
-  name: Campground 1
-  description: This is campground 1
+  name: Munhacke
+  description: Camp Munhacke is council's primary camp at 120 acres. It has a Dining Hall and is located in Gregory Michigan.
+ground2:
+  id: 2
+  name: Teetonkah
+  description: Camp Teetonkahn is the second-oldest Boy Scout camp in America. The camp can be found on Jackson County's Big Wolf Lake and features a new dining hall, two cabins, Adirondack shelters and seven campsites.
+ground3:
+  id: 3
+  name: Muscootah
+  description: Camp Muscootah is a 66-acre (0.27 km2) camp located five minutes west of Hillsdale, Michigan. The camp offers 13 campsites, an open pavilion, and a large firebowl. 
 

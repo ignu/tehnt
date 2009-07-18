@@ -5,7 +5,8 @@
 - @campgrounds.each do |campground|
   %h2= campground.name
   %span.description= campground.description
-  %button#reservation Reserve this Campground!
+  .container
+    %button.reservation Reserve this Campground!
   //=button_to "Check availability", "/campgrounds/#{campground.id}/reservations" + "/start/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{Date.today.strftime('%d')}" + "/end/#{Date.today.strftime('%Y')}/#{Date.today.strftime('%m')}/#{7.days.from_now.strftime('%d')}", :method=>:get
   
 

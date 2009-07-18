@@ -1,22 +1,29 @@
 
+var log = function(message) { // don't error if the browser doesn't run firebug
+    if (console) console.log(message);
+};
+
 var tehnt = {
     init: function(item) {
        item.find('.date').datepicker();
         $("#ui-datepicker-div").addClass("promoteZ");
-       $('#reservation').live('click', function() {
+       $('.reservation').live('click', function() {
            tehnt.selectReservationDates();
-           return false;
        });
     }    
 };
 
 tehnt.selectReservationDates = function() {
-    $('#reservation_dates').dialog({
-        modal:true,
-        title:"Select your camping dates",
-        width:500,
-        buttons: { "Submit" : tehnt.submitReservation}
-    });
+    
+    if (!tehnt.selectReservationDates.dialog)
+        tehnt.selectReservationDates.dialog = $('#reservation_dates').dialog({
+            modal:true,
+            title:"Select your camping dates",
+            width:500,
+            buttons: { "Submit" : tehnt.submitReservation},
+            beforeclose:function() {$("#ui-datepicker-div").hide();}
+        });
+    tehnt.selectReservationDates.dialog.dialog('open');
 };
 
 tehnt.submitReservation = function() {
