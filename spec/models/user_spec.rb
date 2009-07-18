@@ -6,12 +6,7 @@ describe User do
       :first_name => 'len' ,
       :last_name => 'smith',
       :login => 'ignu',
-      :email => 'ignu.smith@gmail.com',
-      :crypted_password => 'pass',
-      :password_salt => 'sale',
-      :persistence_token => 'what',
-      :single_access_token => 'huh',
-      :perishable_token => 'hm'
+      :email => 'ignu.smith@gmail.com'    
     }
   end
 
