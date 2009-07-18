@@ -30,8 +30,8 @@ class ReservationsController < ApplicationController
   
   def create
     @reservation = Reservation.create(params[:reservation])
-    for campsite in params[:selected_campsites][:sites].keys
-       @reservation.campsites << Campsite.find(campsite)
+    for campsite in params[:selected_campsites].keys
+       @reservation.campsites << Campsite.find_by_name(campsite)
     end
     @reservation.registrants << Registrant.create(params[:reg1]) 
     @reservation.registrants << Registrant.create(params[:reg2])    

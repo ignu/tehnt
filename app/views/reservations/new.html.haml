@@ -5,7 +5,7 @@
 
 -form_for Reservation.new do |f|
   -@campsites.each do |site|
-    =hidden_field :selected_campsites, :site, :value => site.id
+    =hidden_field :selected_campsites, site.name, :value => site.id
   %div{:style=>"float:left; width:600px"}
     %table
       %tr
