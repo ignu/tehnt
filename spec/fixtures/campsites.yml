@@ -1,7 +1,41 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+site1:
+  id: 1
+  name: Site 1
+  beds: 40
+  price: 30.0
+  campground_id: 1
+  
+site2:
+  id: 2
+  name: Site 2
+  beds: 10
+  price: 30.0
+  campground_id: 1
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+site3:
+  id: 3
+  name: Site 3
+  beds: 0
+  price: 30.0
+  campground_id: 1
+
+site4:
+  id: 4
+  name: Site 4
+  beds: 100
+  price: 30.0
+  campground_id: 1 
+  
+site5:
+  id: 5
+  name: Site 5
+  beds: 5
+  price: 30.0
+  campground_id: 1
+
+site6:
+  id: 6
+  name: Site 6
+  beds: 40
+  price: 30.0
+  campground_id: 1  

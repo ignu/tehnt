@@ -1,7 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+res1: 
+  id: 1
+  group_type: pack
+  group_number: 44902
+  council_name: Bobs Pack
+  district_name: sector 7
+  other_group_name: none
+  start_date: 2009-07-19
+  end_date: 2009-07-22
+  campsite_id: 1
+  

@@ -1,7 +1,5 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+ground1:
+  id: 1
+  name: Campground 1
+  description: This is campground 1
 
-# one:
-#   column: value
-#
-# two:
-#   column: value

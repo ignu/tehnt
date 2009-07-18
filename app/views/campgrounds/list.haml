@@ -5,7 +5,9 @@
 - @campgrounds.each do |campground|
   %h2= campground.name
   %span.description= campground.description
-  %span.campHere{:campgound=>campground.name} Camp&nbsp;Here
+  =button_to "Check availability", "/campgrounds/#{campground.id}/reservations/year/#{Date.today.strftime('%Y')}/month/#{Date.today.strftime('%m')}/day/#{Date.today.strftime('%d')}", :method=>:get
+  
+
 
   
 

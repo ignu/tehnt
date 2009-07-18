@@ -9,11 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD:db/schema.rb
-ActiveRecord::Schema.define(:version => 20090718030916) do
-=======
-ActiveRecord::Schema.define(:version => 20090718100408) do
->>>>>>> 8eaed3d4ec5c7a468c44773b6ee926073366f440:db/schema.rb
+ActiveRecord::Schema.define(:version => 20090718141208) do
 
   create_table "campgrounds", :force => true do |t|
     t.string   "name",        :null => false
@@ -22,7 +18,15 @@ ActiveRecord::Schema.define(:version => 20090718100408) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD:db/schema.rb
+  create_table "campsites", :force => true do |t|
+    t.string   "name"
+    t.integer  "beds"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "campground_id"
+  end
+
   create_table "registrants", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20090718100408) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "reservation_id"
   end
 
   create_table "reservations", :force => true do |t|
@@ -46,15 +51,7 @@ ActiveRecord::Schema.define(:version => 20090718100408) do
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-=======
-  create_table "campsites", :force => true do |t|
-    t.string   "name"
-    t.integer  "beds"
-    t.float    "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "campground_id"
->>>>>>> 8eaed3d4ec5c7a468c44773b6ee926073366f440:db/schema.rb
+    t.integer  "campsite_id"
   end
 
   create_table "users", :force => true do |t|

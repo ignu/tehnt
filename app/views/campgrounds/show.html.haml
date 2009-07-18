@@ -1,0 +1,13 @@
+.title
+  %h1= @campground.name
+  %span.description= @campground.description
+  %span.campHere{:campgound=>@campground.name}= link_to 'Camp Here', "/campgrounds/#{@campground.id}/reservations"
+  -form_for "/campgrounds/#{@campground.id}/reservations" do
+    =text_field :week
+    =text_field :year
+
+
+  
+
+
+

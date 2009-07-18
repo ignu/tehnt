@@ -1,0 +1,20 @@
+.title= "Reservations for #{@campground.name}"
+-for campsite in @campsites
+  %h2= campsite.name  
+  %span.beds= "#{campsite.beds} beds"
+  - reservations = campsite.reservations.for_week_of(@year,@month,@day) 
+  -if reservations.empty?
+    %span.available="are available this week"
+  -else 
+    -for reservation in reservations
+      Reserved
+      %p.reservations
+        Type:
+        = reservation.group_type 
+      %p.reservations
+        Start Date:
+        = reservation.start_date   
+      %p.reservations
+        End Date:
+        = reservation.end_date  
+       
