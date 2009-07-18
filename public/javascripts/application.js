@@ -6,10 +6,10 @@ var log = function(message) { // don't error if the browser doesn't run firebug
 var tehnt = {
     init: function(item) {
        item.find('.date').datepicker();
-        $("#ui-datepicker-div").addClass("promoteZ");
+       $("#ui-datepicker-div").addClass("promoteZ");
        $('.reservation').live('click', function() {
-           tehnt.selectReservationDates($(this).attr("campground_id"),
-                   $(this).attr("campground_name") );
+       tehnt.selectReservationDates($(this).attr("campground_id"),
+               $(this).attr("campground_name") );
        });
     }    
 };
@@ -44,7 +44,16 @@ tehnt.submitReservation = function() {
       tehnt.showMessage("Start date must be before the End Date.");
       return false;
     }
-   
+
+    // TODO:
+    // HACK: should get this server site    
+    var cutoff_date =new Date(new Date().setDate(new Date().getDate()+3));
+
+    if (startDate < cutoff_date) {
+      tehnt.showMessage("Reservations must be made at least three days in advance.");
+      return false;
+    }
+    
     window.location = '/campgrounds/' +
         tehnt.currentCampgroundId + '/reservations/start/' +
               startDate.getFullYear() + "/" +
