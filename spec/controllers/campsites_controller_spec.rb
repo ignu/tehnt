@@ -6,12 +6,15 @@ describe CampsitesController do
     before(:each) do
       campsite = mock_model(Campsite)
       Campsite.should_receive(:new).and_return(campsite)
+      campgrounds = mock_model(Array)
+      Campground.should_receive(:all).and_return(campgrounds)
       get :new
     end
 
-    it { should assign_to(:campsite)        }
+    it { should assign_to(:campsite)     }
+    it { should assign_to(:campgrounds)     }
     it { should render_template(:edit)   }
-    it { should respond_with(:success)  }
+    it { should respond_with(:success)   }
   end
 
   describe "save, with valid data"  do

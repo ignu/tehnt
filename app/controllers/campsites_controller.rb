@@ -1,6 +1,7 @@
 class CampsitesController < ApplicationController
   def new 
     @campsite = Campsite.new
+    @campgrounds = Campground.all
     render "edit"    
   end
 

@@ -7,15 +7,25 @@
 
   .name
     %label Name:
-    %input{:type=>'text', :name=>"campsite[name]"}
+    .input
+      %input{:type=>'text', :name=>"campsite[name]"}
 
   .beds
     %label Beds:
-    %input{:type=>'text', :name=>"campsite[beds]"}
+    .input
+      %input{:type=>'text', :name=>"campsite[beds]"}
 
   .price
     %label Price:
-    %input{:type=>'text', :name=>"campsite[price]"}
+    .input
+      %input{:type=>'text', :name=>"campsite[price]"}
+
+  .campground
+    %label Campground:
+    .input
+      %select{:name => "campsite[campground_id]"}
+        -@campgrounds.each do |campground|
+          %option{ :value=>campground.id, :selected => @campsite.campground_id == campground.id ? "true" : nil}= campground.name
 
   %input{:type=>'submit', :value=>"Submit"}
 
