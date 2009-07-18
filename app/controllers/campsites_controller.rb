@@ -5,13 +5,22 @@ class CampsitesController < ApplicationController
     render "edit"    
   end
 
+  def edit
+    @campsite = Campsite.find self.params[:id]
+    @campgrounds = Campground.all
+  end
+
   def save
     @campsite = Campsite.new(self.params[:campsite])
     @campsite.save!
     redirect_to '/campsites/new'        
   end
 
-  def list
+  def index
+    @campground = Campground.find_by_name(self.params[:campground_name],
+      :include => 'campsites')
+    render "list"
   end
-
+  
 end
+    

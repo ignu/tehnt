@@ -1,3 +1,4 @@
+<<<<<<< HEAD:log/development.log
 # Logfile created on Fri Jul 17 23:44:04 -0400 2009  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
@@ -7065,3 +7066,5 @@ Rendering template within layouts/application
 Rendering reservations/create
 Rendered layouts/_header (0.2ms)
 Completed in 39ms (View: 2, DB: 0) | 200 OK [http://localhost/reservations]
+=======
+>>>>>>> 390352ec87a982cee79a65cb82fd918c0c8f4982:log/development.log

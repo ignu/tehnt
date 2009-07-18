@@ -3,22 +3,22 @@
 %form{:action => "/campsites/save", :method => 'post'}
   %input{:type => 'hidden', :name => 'authenticity_token', :value => self.form_authenticity_token}
   -if @campsite.id
-    %input{:type=>'hidden', name=>"campsite[id]"}
+    %input{:type=>'hidden', :name=>"campsite[id]", :value=>@campsite.id}
 
   .name
     %label Name:
     .input
-      %input{:type=>'text', :name=>"campsite[name]"}
+      %input{:type=>'text', :name=>"campsite[name]", :value=>@campsite.name}
 
   .beds
     %label Beds:
     .input
-      %input{:type=>'text', :name=>"campsite[beds]"}
+      %input{:type=>'text', :name=>"campsite[beds]", :value=>@campsite.beds}
 
   .price
     %label Price:
     .input
-      %input{:type=>'text', :name=>"campsite[price]"}
+      %input{:type=>'text', :name=>"campsite[price]", :value=>@campsite.price}
 
   .campground
     %label Campground:
