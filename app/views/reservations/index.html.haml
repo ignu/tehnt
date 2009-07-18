@@ -1,11 +1,16 @@
 .title= "Reservations for #{@campground.name}"
--for campsite in @campsites
-  %h2= campsite.name  
-  %span.beds= "#{campsite.beds} beds"
-  - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
-  -if reservations.empty?
-    %span.available="are available this week"
-    =button_to "Reserve", "/campsite/#{campsite.id}/reservation/new" + "/start/#{@start_date.strftime('%Y')}/#{@start_date.strftime('%m')}/#{@start_date.strftime('%d')}" + "/end/#{@end_date.strftime('%Y')}/#{@end_date.strftime('%m')}/#{@end_date.strftime('%d')}"
-  -else 
-    RESERVED
+-form_tag '/reservations/new', :method=> :post do 
+
+  -for campsite in @campsites
+    %h2= campsite.name  
+    %span.beds= "#{campsite.beds} beds"
+    - reservations = campsite.reservations.for_week_of(@start_date, @end_date) 
+    -if reservations.empty?
+      
+      %span.available="check to reserve "
+      =check_box :selected_campsites, campsite.id
+
+    -else 
+      RESERVED 
+  =submit_tag
        

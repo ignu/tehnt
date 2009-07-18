@@ -1,42 +1,70 @@
 -form_for Reservation.new do |f|
-  %p
-    Group Type
-    =f.text_field :group_type
-  %p
-    Group Number
-    =f.text_field :group_number
-  %p
-    Council Name
-    =f.text_field :council_name
-  %p
-    District Name
-    =f.text_field :district_name
-  %p
-    Other Group Name
-    =f.text_field :other_group_name
-  %p
-    Start Date
-    =f.date_select :start_date
-  %p
-    End Date
-    =f.date_select :end_date
-  -f.fields_for :registrants do |r| 
-    %p
-      First Name
-      =r.text_field :first_name
-    %p 
-      Last Name
-      =r.text_field :last_name
-    %p 
-      Address
-      =r.text_field :address
-    %p
-      Zip
-      =r.text_field :zip
-    %p
-      State
-      =r.text_field :address_state
-    %p
-      City
-      =r.text_field :city
+  -@campsites.keys.each do |key|
+    -if @campsites[key] == "1"
+      =hidden_field :selected_campsites, @campsites[key]
+  %div{:style=>"float:left; width:400px"}
+    %table
+      %tr
+        %td Group Type
+        %td=f.text_field :group_type
+      %tr
+        %td Group Number 
+        %td=f.text_field :group_number
+      %tr
+        %td Council Name
+        %td=f.text_field :council_name
+      %tr
+        %td District Name
+        %td=f.text_field :district_name
+      %tr
+        %td Other Group Name
+        %td=f.text_field :other_group_name
+      %tr
+        %td Start Date
+        %td=f.date_select :start_date
+      %tr
+        %td End Date
+        %td=f.date_select :end_date
+      %tr 
+  %div{:style=>"float:left; width:400px"}
+    ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)**
+    %table
+      %tr
+        %td First Name
+        %td=text_field :reg1, :first_name
+      %tr
+        %td Last Name
+        %td=text_field :reg1, :last_name
+      %tr 
+        %td Address
+        %td=text_field :reg1, :address
+      %tr
+        %td Zip
+        %td=text_field :reg1, :zip
+      %tr
+        %td State
+        %td=text_field :reg1, :address_state
+      %tr
+        %td City
+        %td=text_field :reg1, :city   
+      %tr
+        %td First Name
+        %td=text_field :reg2, :first_name
+      %tr
+        %td Last Name
+        %td=text_field :reg2, :last_name
+      %tr 
+        %td Address
+        %td=text_field :reg2, :address
+      %tr
+        %td Zip
+        %td=text_field :reg2, :zip
+      %tr
+        %td State
+        %td=text_field :reg2, :address_state
+      %tr
+        %td City
+        %td=text_field :reg2, :city    
+
+  =submit_tag
      

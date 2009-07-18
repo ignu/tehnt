@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController    
   before_filter :find_campground, :only => [:index]
-  before_filter :get_start_date
-  before_filter :get_end_date
+  before_filter :get_start_date, :only =>  [:index]
+  before_filter :get_end_date, :only => [:index]
   
   def index
     @campsites = @campground.campsites(:include => 'reservations')
@@ -13,7 +13,21 @@ class ReservationsController < ApplicationController
   end
   
   def new
+    @campsites = params[:selected_campsites]
+    logger.info "Selected campsites array #{params[:selected_campsites]}"
+    logger.info @campsites.inspect
+  end 
+  
+  def create
     
+
+    @reservation = Reservation.create(params[:reservation])
+    if @reservation.save
+      flash[:success] = "Saved"
+    else 
+      logger.info "Failed to save: #{@reservation.errors.to_json}"
+      flash[:error] = list_errors(@reservation.errors)
+    end
   end
   
   protected

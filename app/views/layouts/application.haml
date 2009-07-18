@@ -7,11 +7,19 @@
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'ui-lightness/jquery-ui-1.7.2.custom.css', :media => 'screen, projection' 
     = stylesheet_link_tag 'site.css', :media => 'screen, projection'
+    = render :partial => 'layouts/header'
   %body
     -if flash[:notice]
       .notice=flash[:notice]
+<<<<<<< HEAD:app/views/layouts/application.haml
     #messageDiv
       #flashMessage
 
+=======
+    -if flash[:error]
+      .notice=flash[:error]
+    -if flash[:success]
+      .notice=flash[:success] 
+>>>>>>> 91004be97acebc8df4af170532c02b6629da956d:app/views/layouts/application.haml
     #container
       = yield
