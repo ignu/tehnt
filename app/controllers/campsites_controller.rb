@@ -5,8 +5,8 @@ class CampsitesController < ApplicationController
   end
 
   def save
-
-    
+    @campsite = Campsite.new(self.params[:campsite])
+    @campsite.save!
     render 'edit'
   end
 

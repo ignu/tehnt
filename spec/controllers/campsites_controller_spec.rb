@@ -19,8 +19,9 @@ describe CampsitesController do
     before(:each) do
       @params = {:name => 'a site', :beds=> 4, :price => 34.23}
       @campsite = mock_model(Campsite)
-      Campsite.should_receive(:new).with(@params).and_return(@campsite)
-      @campsite.should_receive(save!)
+      Campsite.should_receive(:new).with(hash_including(@params)).and_return(@campsite)
+      @campsite.should_receive(:save!).and_return(@campsite)
+      post(:save, {:campsite => @params})
     end
 
     it { should assign_to(:campsite) }
