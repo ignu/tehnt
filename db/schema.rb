@@ -9,11 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090718052304) do
+ActiveRecord::Schema.define(:version => 20090718082358) do
 
   create_table "campgrounds", :force => true do |t|
     t.string   "name",        :null => false
     t.string   "description", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "campsites", :force => true do |t|
+    t.string   "name"
+    t.integer  "beds"
+    t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
