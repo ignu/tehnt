@@ -7,19 +7,18 @@ describe CampgroundsController do
     controller.should be_an_instance_of(CampgroundsController)
   end
 
+ end
 
 
-  describe CampgroundsController
+describe CampgroundsController, "routing" do
 
-  describe "GET 'list'" do
-    it "should be successful" do
+  it "connects the root of the site to new" do
+    params_from(:get, "/").should == {:controller => 'campgrounds', :action => 'list'}
+  end
+
+    it "GET 'list' be successful" do
       get 'list'
       response.should be_success
     end
-
-    it "GET '/' should be the list action" do
-      get '/'
-      response.should be_success
-    end
-  end
+  
 end
