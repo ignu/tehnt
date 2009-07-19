@@ -15,4 +15,7 @@
   -for registrant in @reservation.registrants
     .registrant
       =registrant.first_name
-      =registrant.last_name 
+      =registrant.last_name  
+%p
+  Total Cost - 
+  =number_to_currency @reservation.total_cost

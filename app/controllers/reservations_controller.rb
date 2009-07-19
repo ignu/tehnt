@@ -34,6 +34,7 @@ class ReservationsController < ApplicationController
     end
     @reservation.registrants << Registrant.create(params[:reg1])
     @reservation.registrants << Registrant.create(params[:reg2])
+    @reservation.in_council = true if @reservation.council_name == 'Great Sauk Trail'
     if @reservation.save
       flash[:success] = "Saved"
     else
