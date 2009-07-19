@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  #protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password   
@@ -25,5 +25,20 @@ class ApplicationController < ActionController::Base
     end
     error_message << "</ul>"
   end
+  
+  protected
+    def get_start_date
+      logger.info "#{params[:s_year]}, #{params[:s_month]}, #{params[:s_day]}"
+      @start_date = "#{params[:s_year]}-#{params[:s_month]}-#{params[:s_day]}".to_date
+      logger.info "Start date = #{@start_date}"
+       # Date.new(params[:s_year], params[:s_month], params[:s_day])   
+    end
+  
+    def get_end_date 
+      logger.info "#{params[:e_year]}, #{params[:e_month]}, #{params[:e_day]}"
+      @end_date = "#{params[:e_year]}-#{params[:e_month]}-#{params[:e_day]}".to_date
+      logger.info "End date = #{@end_date}"
+      # @end_date = Date.new(params[:e_year], params[:e_month], params[:e_day])   
+    end
   
 end

@@ -7,21 +7,12 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-
-
-
-
-  #config.gem "rspec", :lib => false, :version => ">= 1.2.0"
-  #config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
-  config.gem 'thoughtbot-shoulda', :lib => false, :source=>"http://gems.github.com"
-  
-  
   # don't know about these on heroku
   
-  config.gem 'haml-edge', :lib => 'haml'
+  config.gem 'haml', :lib => 'haml'
   #config.gem 'chriseppstein-compass', :lib => 'compass', :source=>"http://gems.github.com"
   #config.gem 'authlogic', :lib => false
-
+  config.gem 'fastercsv'
 
 # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

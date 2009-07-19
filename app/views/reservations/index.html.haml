@@ -1,17 +1,28 @@
 .title= "Reservations for #{@campground.name}"
--form_tag '/reservations/new', :method=> :post do 
+-form_tag '/reservations/new', :method=> :post, :id=>'campsite_selection' do 
   =hidden_field :dates, :reservation_start_date, :value=> @start_date.to_s
   =hidden_field :dates, :reservation_end_date, :value=> @end_date.to_s
-  -for campsite in @campsites
-    %h2= campsite.name  
-    %span.beds= "#{campsite.beds} beds."
-    - reservations = campsite.reservations.for_date_requested(@start_date, @end_date) 
-    -if reservations.empty?
-      
-      %span.available=" Check to reserve "
-      =check_box :selected_campsites, campsite.id
+  .campsites
+    -for campsite in @campsites
+      %h2= campsite.name
+      %span.beds= "#{campsite.beds} beds."
+      - reservations = campsite.reservations.between(@start_date, @end_date)
+      -if reservations.empty?
+        %span.available=" Check to reserve "
+        =check_box :selected_campsites, campsite.id
 
-    -else 
-      RESERVED 
-  =submit_tag
-       
+      -else
+        RESERVED!
+        -if true # check for admin
+          -reservation = reservations[0]
+          admins only
+          = reservation.group_type
+          -if !reservation.paid_in_full
+            %a.not_paid{:reservation_id=>reservation.id} Mark As Paid
+          -else
+            %a.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
+      .spacer
+    =submit_tag 'Create Reservation'
+
+%a.reservation{:campground_id=>@campground.id, :campground_name=>@campground.name} Change Reservation Dates
+= render :partial => 'layouts/datepicker'

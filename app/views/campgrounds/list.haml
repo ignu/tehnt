@@ -1,0 +1,11 @@
+.title
+  %h1 Campgrounds
+
+#campgrounds
+- @campgrounds.each do |campground|
+  %h2= campground.name
+  %span.description= campground.description
+  .container
+    %button.reservation{:campground_id=>campground.id, :campground_name=>campground.name} Reserve this Campground!
+
+= render :partial => 'layouts/datepicker'

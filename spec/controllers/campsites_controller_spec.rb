@@ -17,13 +17,15 @@ describe CampsitesController do
     it { should respond_with(:success)   }
   end
 
-  describe "save, with valid data"    do
+  describe "create, with valid data"    do
     before(:each) do
       @params = {:name => 'a site', :beds=> 4, :price => 34.23}
       @campsite = mock_model(Campsite)
+      @campground = stub_model(Campground)
       Campsite.should_receive(:new).with(hash_including(@params)).and_return(@campsite)
+      @campsite.should_receive(:campground).and_return(@campground);
       @campsite.should_receive(:save!).and_return(@campsite)
-      post(:save, {:campsite => @params})
+      post(:create, {:campsite => @params})
     end
 
     it { should assign_to(:campsite) }
@@ -35,10 +37,10 @@ describe CampsitesController do
     before(:each) do
 
       @campground = mock_model(Campground)
+      #todo: figure out why this fails, think the with block doesn't match
+      Campground.should_receive(:find_by_name!).with("wut", :include=>'campsites').and_return(@campground)
 
-      Campground.should_receive(:find_by_name).with("wut", :include=>'campsites').and_return(@campground)
-
-      get "/campgrounds/wut/campsites/"
+      get(:index, {:campground_name => 'wut'})
     end
 
     it { should assign_to(:campground)}
@@ -58,10 +60,6 @@ describe CampsitesController do
    it "connects /campgrounds/:campground_name/campsites/ to index" do
      puts params_from(:get, "/campgrounds/boo/campsites/").should ==
              {:controller => 'campsites', :action => 'index', :campground_name => 'boo'}
-
     end
   end
 end
-
-
-

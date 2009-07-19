@@ -9,7 +9,6 @@ res1:
   other_group_name: none
   start_date: 2009-07-01
   end_date: 2009-07-07
-  campsite_id: 1
 res2:
   id: 2
   group_type: pack
@@ -19,7 +18,6 @@ res2:
   other_group_name: none
   start_date: 2009-07-05
   end_date: 2009-07-07
-  campsite_id: 1
 res3:
   id: 3
   group_type: pack
@@ -28,5 +26,4 @@ res3:
   district_name: sector 9
   other_group_name: none
   start_date: 2009-06-21
-  end_date: 2009-06-30
-  campsite_id: 1
+  end_date: 2009-06-30  

@@ -1,0 +1,13 @@
+#reservation_dates
+  %table
+    %tr
+      %td
+        Check in Date:
+        .field
+          %input.date{:type=>'text', :name=>'startDate', :id=>'startDate'}
+      %td
+        #endDateDiv
+          Check out Date:
+          .field
+            %input.date{:type=>'text', :name=>'endDate', :id=>'endDate'}
+
