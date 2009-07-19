@@ -7,14 +7,14 @@ describe CampgroundsController do
     controller.should be_an_instance_of(CampgroundsController)
   end
 
-  describe "list" do
+  describe "index" do
     before(:each) do
       campgrounds = mock_model(Array)
       Campground.should_receive(:all).and_return(campgrounds)
-      get 'list'
+      get 'index'
     end
     it { should assign_to(:campgrounds)     }
-    it { should render_template('list')     }
+    it { should render_template('index')     }
     it { should respond_with(:success)      }
   end
 
@@ -23,7 +23,7 @@ describe CampgroundsController do
 
 describe CampgroundsController, "routing" do
 
-  it "connects the root of the site to new" do
+  it "connects the root of the site to index" do
     params_from(:get, "/").should == {:controller => 'campgrounds', :action => 'index'}
   end
 
