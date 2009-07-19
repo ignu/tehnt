@@ -17,7 +17,6 @@
       %td=f.text_field :group_number
     %tr
       %td Council Name
-      %td=f.text_field :council_name #, 'Great Sauk Trail'
     %tr
       %td District Name
       %td=f.text_field :district_name
@@ -50,7 +49,7 @@
       %td Departure Time of day
       %td=f.text_field :departure_time
     
-  %h4 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)** 
+  %h4 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)**
   %h3 First Adult
   =render :partial => 'registrants/registrant', :locals=>{:pos => 'reg1'} 
   %h3 Second Adult
