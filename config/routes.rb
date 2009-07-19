@@ -20,7 +20,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   
-  map.set_paid '/reservations/set_paid/:id', {
+  map.set_paid '/reservations/set_paid/', {
               :controller => "reservations",
-              :action=> "set_paid"}
+              :action=> "set_paid",
+              :conditions => {:method=>:post}}
 end

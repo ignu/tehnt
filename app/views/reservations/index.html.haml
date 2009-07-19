@@ -13,10 +13,15 @@
         =check_box :selected_campsites, campsite.id
 
       -else
-        RESERVED
-
+        RESERVED!
         -if true # check for admin
-          =reservations[0].group_type
+          -reservation = reservations[0]
+          admins only
+          = reservation.group_type
+          -if !reservation.paid_in_full
+            %a.not_paid{:reservation_id=>reservation.id} Mark As Paid
+          -else
+            %a.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
       .spacer
     =submit_tag 'Create Reservation'
 
