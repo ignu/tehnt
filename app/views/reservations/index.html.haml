@@ -60,11 +60,14 @@
                 ="#{registrant.address} #{registrant.city}, #{registrant.address_state} #{registrant.zip}"
               .info
                 ="#{registrant.phone}"
+          .div
+            =link_to 'Delete', "/reservations/#{reservation.id}", :method=> "DELETE", :confirm => "Are you sure you want to delete this campsite"
 
           -if !reservation.paid_in_full
             %button.not_paid{:reservation_id=>reservation.id} Mark As Paid
           -else
             %button.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
+
         -else
           RESERVED!      
     =submit_tag 'Create Reservation'
