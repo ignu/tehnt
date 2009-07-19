@@ -44,7 +44,7 @@ class ReservationsController < ApplicationController
   
   def set_paid
     @reservation = Reservation.find(params[:id])
-    @reservation.paid_in_full = true
+    @reservation.paid_in_full = params[:value]
     @reservation.save!
     if @reservation.paid_in_full #sry
       render :text => "Reservation ##{@reservation.id} marked paid in full"
