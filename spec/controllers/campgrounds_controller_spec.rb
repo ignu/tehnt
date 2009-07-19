@@ -24,7 +24,7 @@ describe CampgroundsController do
 describe CampgroundsController, "routing" do
 
   it "connects the root of the site to new" do
-    params_from(:get, "/").should == {:controller => 'campgrounds', :action => 'list'}
+    params_from(:get, "/").should == {:controller => 'campgrounds', :action => 'index'}
   end
 
     it "GET 'list' be successful" do

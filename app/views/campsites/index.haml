@@ -1,10 +1,12 @@
-.title
-  %h1= "Campsites"
-
-#campgrounds
-- @campsites.each do |campsite|
-  %h2= campsite.name
-  %span.description= campsite.beds
-  %span.description= campsite.price
-
-  %a{:href=>"/campsites/edit/#{campsite.id}"}edit
+/ .title
+/   %h1= "Campsites"
+/ 
+/ #campgrounds
+/ - @campsites.each do |campsite|
+/   %h2= campsite.name
+/   %span.description= campsite.beds
+/   %span.description= campsite.price
+/ 
+/   %a{:href=>"/campsites/edit/#{campsite.id}"}edit
+/   =link_to 'delete', "/campsites/#{campsite.id}", :method => :delete, :confirm => "Are you sure you want to delete this campsite"     
+  

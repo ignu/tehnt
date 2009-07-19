@@ -2,3 +2,4 @@
 .nav
   =link_to 'home', "/" 
   =link_to 'logout', "/logout" if admin?
+  = yield :admin_nav

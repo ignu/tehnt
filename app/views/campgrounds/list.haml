@@ -7,5 +7,12 @@
   %span.description= campground.description
   .container
     %button.reservation{:campground_id=>campground.id, :campground_name=>campground.name} Reserve this Campground!
-
+    -if admin?
+      =link_to "edit", "campgrounds/edit/#{campground.id}"
+      =link_to "delete", "campgrounds/#{campground.id}", :method => :delete, :confirm => 'Are you sure you want to delete'
+      =link_to 'list campsites', "/campgrounds/#{campground.name}/campsites"
 = render :partial => 'layouts/datepicker'
+
+-if admin?
+  - content_for :admin_nav do
+    = link_to 'New Campground', '/campgrounds/new' 
