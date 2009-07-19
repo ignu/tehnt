@@ -9,12 +9,12 @@
     = stylesheet_link_tag 'site.css', :media => 'screen, projection'
     = render :partial => 'layouts/header'
   %body
-    -if flash[:notice]
-      .notice=flash[:notice]
     #messageDiv
       #flashMessage
     -if flash[:error]
       .notice=flash[:error]
+    -if flash[:notice]
+      .notice=flash[:notice]
     -if flash[:success]
       .notice=flash[:success] 
     #container

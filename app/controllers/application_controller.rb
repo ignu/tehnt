@@ -3,11 +3,17 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  before_filter :clear_flash
+
   #protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password   
-  
+
+  def clear_flash
+    flash.discard 
+  end
+
   def list_errors(errors, skip_attrib = false)
     error_message = "<ul>"
     if skip_attrib

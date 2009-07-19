@@ -17,7 +17,13 @@ var tehnt = {
 
         $('#create_reservation').submit(tehnt.toc.show);
 
-    }    
+        var flashText = $('div.notice').text();
+
+        if(flashText) tehnt.showMessage(flashText);
+    }
+
+
+
 };
 
 
