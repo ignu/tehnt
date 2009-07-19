@@ -1,0 +1,17 @@
+.title
+  %h1= "Campsites for #{@campground.name}"
+
+#campgrounds
+- @campground.campsites.each do |campsite|
+  .field    
+    %h2= campsite.name
+
+  .field
+    %label Beds
+    %span.description= campsite.beds
+
+  .field
+    %label Price
+    %span.description= campsite.price
+
+  %a{:href=>"/campsites/edit/#{campsite.id}"}edit
