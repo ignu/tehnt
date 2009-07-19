@@ -125,7 +125,8 @@ tehnt.markAsPaid.get_payment_toggle_function = function(isPaid) {
           success:function(message) { tehnt.showMessage(message); element.togglePaymentStatus();},
           type:'POST'
        });
-    };
+      return false;
+    };  
 };
 
 $.fn.togglePaymentStatus = function() { // orly?
