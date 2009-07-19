@@ -46,6 +46,8 @@
       -for site in reservation.campsites
         %p
           =site.name
+          in 
+          =site.campground.name
   
     %p
       Reserved from 
