@@ -17,13 +17,15 @@ describe CampsitesController do
     it { should respond_with(:success)   }
   end
 
-  describe "save, with valid data"    do
+  describe "create, with valid data"    do
     before(:each) do
       @params = {:name => 'a site', :beds=> 4, :price => 34.23}
       @campsite = mock_model(Campsite)
+      @campground = stub_model(Campground)
       Campsite.should_receive(:new).with(hash_including(@params)).and_return(@campsite)
+      @campsite.should_receive(:campground).and_return(@campground);
       @campsite.should_receive(:save!).and_return(@campsite)
-      post(:save, {:campsite => @params})
+      post(:create, {:campsite => @params})
     end
 
     it { should assign_to(:campsite) }
@@ -61,6 +63,3 @@ describe CampsitesController do
     end
   end
 end
-
-
-
