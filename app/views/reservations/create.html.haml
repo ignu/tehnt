@@ -1,21 +1,65 @@
-%p We have the following information:
-%p 
-  Date of reservation
-  =@reservation.start_date.strftime("%x") 
-  thru
-  =@reservation.end_date.strftime("%x")
-   
-%p
-  Campsites
+%h1 Thank you for your reservation!   
+%h2 Please print this page for your records and to make payment.
+
+%b You have reserved:
+%br
+
+.summary
+
   -for campsite in @reservation.campsites
-    .campsite=campsite.name 
-    
+    %h3=campsite.name
+     
+    =@reservation.start_date.strftime("%x")
+    thru
+    =@reservation.end_date.strftime("%x")
+
+  %p
+
+  %p
+    %b Adults on reservation
+    -for registrant in @reservation.registrants
+      .registrant
+        =registrant.first_name
+        =registrant.last_name
+  %p
+  %p
+    %b Total Amount Due:
+    =number_to_currency @reservation.total_cost
+    %br
+    %b Reservation #
+    =@reservation.id
 %p
-  Adults listed on reservation
-  -for registrant in @reservation.registrants
-    .registrant
-      =registrant.first_name
-      =registrant.last_name  
+.c This registration will be cancelled and deleted in 7 days if payment is not received.
+
 %p
-  Total Cost - 
-  =number_to_currency @reservation.total_cost
+.c You can make a payment by:
+%p
+.c
+  %b 1.Mailing a check and a printout of this screen to:
+  %blockquote
+    Great Sauk Trail Council
+    %br
+    Attn: Camping Reservations
+    %br
+    1979 Huron Parkway
+    %br
+    Ann Arbor, MI 48104
+    %br
+%p
+.c
+  %b 2. By Credit Card or Unit Account by calling Sue Roman at 734-971-7100
+%p
+.c
+  %b 3.Online via this link:
+  %a{:href=>"http://www.doubleknot.com/registration/CampaignDetail.asp?orgkey=1777&activitykey=627951"}http://www.doubleknot.com/registration/CampaignDetail.asp?orgkey=1777&activitykey=627951
+%p
+.c (When paying online, you will need to enter your reservation # and the amount due.  The link above will take you to the GSTC Doubleknot system)
+%p
+.c
+  Questions regarding your reservation should be directed to:  Sue Roman
+  .a{:href=>"mailto:sroman@bsamail.org"}sroman@bsamail.org
+  734-971-7100
+
+%p
+%a{:href=>'http://www.gstcbsa.org'}Back to Great Sauk Trail Council
+
