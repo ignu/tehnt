@@ -3,7 +3,8 @@ ActionController::Routing::Routes.draw do |map|
     :controller => 'campgrounds',
     :action => 'list'
   }) 
-
+  map.login 'login', :controller => "admin", :action => "login"
+  map.login 'logout', :controller => "admin", :action => "logout" 
   map.resources :reservations
   map.resources :campsites
   map.index_campsite('/campgrounds/:campground_name/campsites/', {
