@@ -7,28 +7,30 @@ var tehnt = {
     init: function(item) {
        item.find('.date').datepicker();
        $("#ui-datepicker-div").addClass("promoteZ");
+       tehnt.wire_campsite_selection_validation();
        $('.reservation').live('click', function() {
        tehnt.selectReservationDates($(this).attr("campground_id"),
-               $(this).attr("campground_name") );
+          "Select camping dates for " + $(this).attr("campground_name"),
+          tehnt.submitReservation);
        });
     }    
 };
 
 
-tehnt.selectReservationDates = function(campground_id, campground_name) {
-    tehnt.currentCampgroundId = campground_id;
-    
+tehnt.selectReservationDates = function(campground_id, title, callback) {
+    tehnt.currentCampgroundId = campground_id;    
     var dialog = $('#reservation_dates').dialog({
         modal:true,
         width:500,
-        buttons: { "Submit" : tehnt.submitReservation},
+        buttons: { "Submit" : callback},
         beforeclose:function() {$("#ui-datepicker-div").hide();}
     });
 
-    $('.ui-dialog-title').text("Select camping dates for " + campground_name);
+    $('.ui-dialog-title').text(title);
 
     dialog.dialog('open');
 };
+
 
 tehnt.submitReservation = function() {
 
@@ -83,9 +85,21 @@ tehnt.showMessage = function(data) {
     setTimeout("$('#" + messageID + "').fadeOut('fast');", 4200);
 };
 
+
+tehnt.wire_campsite_selection_validation = function() {
+    $('#campsite_selection').submit(function() {
+       if(!$('#campsite_selection input:checkbox:checked').length) {
+           tehnt.showMessage("At least one campsite must be selected!");
+           return false;
+       }
+    });
+}
+
+
 $(function() {
    tehnt.init($('body'));
 });
+
 
 
 

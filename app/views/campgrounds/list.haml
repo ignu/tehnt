@@ -8,19 +8,4 @@
   .container
     %button.reservation{:campground_id=>campground.id, :campground_name=>campground.name} Reserve this Campground!
 
-  
-
-#reservation_dates
-
-  %table  
-    %tr
-      %td
-        Check in Date:
-        .field
-          %input.date{:type=>'text', :name=>'startDate', :id=>'startDate'}
-      %td
-        #endDateDiv
-          End Date:
-          .field
-            %input.date{:type=>'text', :name=>'endDate', :id=>'endDate'}
-                                                                           
+= render :partial => 'layouts/datepicker'

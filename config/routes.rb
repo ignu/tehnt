@@ -2,7 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.root({
     :controller => 'campgrounds',
     :action => 'list'
-  }) 
+  })
+
   map.login 'login', :controller => "admin", :action => "login"
   map.login 'logout', :controller => "admin", :action => "logout" 
   map.resources :reservations
@@ -18,5 +19,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-
+  
+  map.set_paid '/reservations/set_paid/:id', {
+              :controller => "reservations",
+              :action=> "set_paid"}
 end
