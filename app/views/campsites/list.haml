@@ -13,6 +13,11 @@
   .field
     %label Price
     %span.description= campsite.price
+  
+  -if campsite.ooc_price
+    .field
+      %label Out of Council Price
+      %span.description= campsite.ooc_price 
 
   %a{:href=>"/campsites/edit/#{campsite.id}"}edit
   =link_to "delete", "campsites/#{campsite.id}", :method => :delete, :confirm => "Are you sure you want to delete this campsite?"   
