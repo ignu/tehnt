@@ -14,8 +14,8 @@ describe Reservation do
   end
 
   # current reservation dates for reference
-  # start_date: 2009-07-1  end_date: 2009-07-7
-  # start_date: 2009-07-5   end_date: 2009-07-7
+  # start_date: 2009-07-01  end_date: 2009-07-07
+  # start_date: 2009-07-05   end_date: 2009-07-07
   # start_date: 2009-06-21   end_date: 2009-06-29
 
   it "should return a reservations the search criteria overlaps" do
