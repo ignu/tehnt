@@ -1,9 +1,11 @@
 -form_for @campground do |f|
   %p
     =f.label :name
+    %br
     =f.text_field :name
   %p
     =f.label :description
+    %br
     =f.text_area :description
     
   =submit_tag
