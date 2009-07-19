@@ -1,8 +1,8 @@
 .title
-  %h1= "Campsites for #{@campground.name}"
+  %h1= "Campsites"
 
 #campgrounds
-- @campground.campsites.each do |campsite|
+- @campsites.each do |campsite|
   %h2= campsite.name
   %span.description= campsite.beds
   %span.description= campsite.price

@@ -7,7 +7,8 @@
   %span.description= campground.description
   .container
     %button.reservation{:campground_id=>campground.id, :campground_name=>campground.name} Reserve this Campground!
-
+    -if admin?
+      =render :partial => 'shared/crud', :locals => { :path => "/campgrounds/#{campground.id}" }
   
 
 #reservation_dates
@@ -23,4 +24,18 @@
           End Date:
           .field
             %input.date{:type=>'text', :name=>'endDate', :id=>'endDate'}
+
                                                                            
+-if admin?
+  %p
+    #add_campground
+    %h3 Add new Campground
+    -form_for Campground.new do |f|
+      %p
+        =f.label :name
+        =f.text_field :name
+      %p
+        =f.label :description
+        =f.text_area :description
+      =submit_tag  
+    

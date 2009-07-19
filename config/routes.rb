@@ -1,12 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   map.root({
     :controller => 'campgrounds',
-    :action => 'list'
+    :action => 'index'
   }) 
   map.login 'login', :controller => "admin", :action => "login"
   map.login 'logout', :controller => "admin", :action => "logout" 
   map.resources :reservations
   map.resources :campsites
+  map.resources :campgrounds
   map.index_campsite('/campgrounds/:campground_name/campsites/', {
           :controller => 'campsites',
           :action => 'index',
