@@ -13,7 +13,7 @@ class CampsitesController < ApplicationController
   def save       
     @campsite = Campsite.new(self.params[:campsite])    
     @campsite.save!
-    redirect_to '/campsites/new'        
+    redirect_to "/campgrounds/#{@campsite.name}/campsites"
   end
 
   def index
@@ -21,6 +21,5 @@ class CampsitesController < ApplicationController
       :include => 'campsites')
     render "list"
   end
-  
+
 end
-    
