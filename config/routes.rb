@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :campgrounds 
   map.resources :reports
   map.index_reports '/reports/start/:s_year/:s_month/:s_day/end/:e_year/:e_month/:e_day/', :controller => 'reports', :action => 'list'
+  map.index_reports '/reports/start/:s_year/:s_month/:s_day/end/:e_year/:e_month/:e_day/:format', :controller => 'reports', :action => 'list'
   map.index_campsite('/campgrounds/:campground_name/campsites/', {
           :controller => 'campsites',
           :action => 'index',

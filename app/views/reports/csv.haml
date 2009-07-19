@@ -1,0 +1,3 @@
+-for reservation in @reservations
+  -for booking in reservation.bookings
+    =booking.to_csv

@@ -3,25 +3,24 @@
 
 #campgrounds
 - @campground.campsites.each do |campsite|
-  %p
-    .field    
-      %h2= campsite.name
+  .field    
+    %h2= campsite.name
 
+  .field
+    %label Beds
+    %span.description= campsite.beds
+
+  .field
+    %label Price
+    %span.description= campsite.price
+
+  -if campsite.ooc_price
     .field
-      %label Beds
-      %span.description= campsite.beds
+      %label Out of Council Price
+      %span.description= campsite.ooc_price 
 
-    .field
-      %label Price
-      %span.description= campsite.price
-  
-    -if campsite.ooc_price
-      .field
-        %label Out of Council Price
-        %span.description= campsite.ooc_price 
-
-    %a{:href=>"/campsites/edit/#{campsite.id}"}edit
-    =link_to "delete", "campsites/#{campsite.id}", :method => :delete, :confirm => "Are you sure you want to delete this campsite?"    
+  %a{:href=>"/campsites/edit/#{campsite.id}"}edit
+  =link_to "delete", "campsites/#{campsite.id}", :method => :delete, :confirm => "Are you sure you want to delete this campsite?"    
   
 -if admin?
   - content_for :admin_nav do

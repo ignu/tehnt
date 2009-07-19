@@ -1,7 +1,9 @@
 -if admin?
   %p
     = render :partial => 'layouts/datepicker'
-    %button.reportrange Select Date  
+    %button.reportrange Select Date
+    =button_to "Download Full CSV","/reports.csv", :method => :get 
+    =button_to "Download Date Range CSV", "csv"
 
 %p
   -if @start_date && @end_date
