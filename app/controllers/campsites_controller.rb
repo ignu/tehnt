@@ -18,7 +18,7 @@ class CampsitesController < ApplicationController
   end
 
   def create
-    @campsite = Campsite.new(self.params[:campsite])    
+    @campsite = Campsite.new(self.params[:campsite])
     @campsite.save!
     redirect_to "/campgrounds/#{@campsite.campground.name}/campsites"
   end

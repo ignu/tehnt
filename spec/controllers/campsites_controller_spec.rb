@@ -30,12 +30,12 @@ describe CampsitesController do
     it { should respond_with(:redirect) }
   end
 
-  describe "list" do
+  describe "index" do
 
     before(:each) do
 
       @campground = mock_model(Campground)
-      #todo: figure out why this fails, think the with block doesn't match
+
       Campground.should_receive(:find_by_name).with("wut", :include=>'campsites').and_return(@campground)
 
       get "/campgrounds/wut/campsites/"
@@ -55,7 +55,7 @@ describe CampsitesController do
      params_from(:post, "/campsites/save").should == {:controller => 'campsites', :action => 'save'}
    end
 
-   it "connects /campgrounds/:campground_name/campsites/ to list" do
+   it "connects /campgrounds/:campground_name/campsites/ to index" do
      puts params_from(:get, "/campgrounds/boo/campsites/").should ==
              {:controller => 'campsites', :action => 'index', :campground_name => 'boo'}
 
