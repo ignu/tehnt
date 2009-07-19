@@ -7,6 +7,8 @@
 -form_for Reservation.new, :html=>{:id => 'create_reservation'}  do |f|
   -@campsites.each do |site|
     =hidden_field :selected_campsites, site.name, :value => site.id
+  =hidden_field :start_date, :start_date, :value => @reservation_start_date
+  =hidden_field :end_date, :end_date, :value => @reservation_end_date
   %table
     %h3 Troop, Pack or Post information
     %tr
@@ -37,15 +39,15 @@
       %td=f.text_field :num_adults 
   %table
     %h3 Dates and Times
-    %tr
-      %td Start Date
-      %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date
+    / %tr
+    /   %td Start Date
+    /   %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date 
     %tr
       %td Arrival Time of day
       %td=f.text_field :arrival_time 
-    %tr
-      %td End Date
-      %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date 
+    / %tr
+    /   %td End Date
+    /   %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date   
     %tr
       %td Departure Time of day
       %td=f.text_field :departure_time
