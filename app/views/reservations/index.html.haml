@@ -8,12 +8,14 @@
       %span.beds= "#{campsite.beds} beds."
       - reservations = campsite.reservations.between(@start_date, @end_date)
       -if reservations.empty?
-
         %span.available=" Check to reserve "
         =check_box :selected_campsites, campsite.id
 
       -else
         RESERVED
+
+        -if true # check for admin
+          =reservations[0].group_type
       .spacer
     =submit_tag 'Create Reservation'
 
