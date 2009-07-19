@@ -5,7 +5,6 @@ class ReservationsController < ApplicationController
   
   def index
     @campsites = @campground.campsites(:include => 'reservations')
-    
   end 
   
   def show
