@@ -881,7 +881,15 @@ a { cursor:pointer; text-decoration:none; color: #1D345F; font-weight:bold;}
     margin-left:20px;
 }
 
+.jquery-dialog{
+  overflow-y: auto;
+  height: 300px;
+}
 a.reservation { font-style:italic; font -weight:normal;}
 div.spacer { height:7px;}
 
 div.heading {font-size:16px;}
+
+
+
+

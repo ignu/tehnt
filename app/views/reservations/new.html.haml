@@ -4,7 +4,7 @@
     .campsite=campsite.name 
 %br
 
--form_for Reservation.new do |f|
+-form_for Reservation.new, :html=>{:id => 'create_reservation'}  do |f|
   -@campsites.each do |site|
     =hidden_field :selected_campsites, site.name, :value => site.id
   %table
