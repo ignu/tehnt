@@ -1,5 +1,5 @@
 class CampsitesController < ApplicationController
-  def new 
+  def new
     @campsite = Campsite.new
     @campgrounds = Campground.all
     render "edit"
@@ -24,7 +24,9 @@ class CampsitesController < ApplicationController
   end
 
   def index
-    @campsites = Campsite.all
+    @campground = Campground.find_by_name!(self.params[:campground_name],
+      :include => 'campsites')
+    render "list"
   end
 
 end
