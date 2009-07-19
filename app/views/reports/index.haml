@@ -1,0 +1,57 @@
+-if admin?
+  %p
+    = render :partial => 'layouts/datepicker'
+    %button.reportrange Select Date  
+
+%p
+  -if @start_date && @end_date
+    ="All reservations from #{@start_date.strftime("%x")} to #{@end_date.strftime("%x")}" 
+  -else
+    All Reservations in system 
+  
+%p
+  -for reservation in @reservations 
+    %p
+      Id= 
+      =reservation.id
+    %p
+      Group Type=   
+      =reservation.group_type
+    %p
+      Group Number= 
+      =reservation.group_number
+    %p
+      Council Name=
+      =reservation.council_name
+    %p
+      District Name=
+      =reservation.district_name
+    %p
+      Created=
+      =reservation.created_at.strftime("%x")
+    
+    %p
+      -for user in reservation.registrants 
+        %p
+          =user.first_name
+          =user.last_name
+        %p
+          =user.address
+          =user.city
+          =user.address_state
+          =user.zip
+        %p
+          =user.phone 
+    %p
+      -for site in reservation.campsites
+        %p
+          =site.name
+  
+    %p
+      Reserved from 
+      =reservation.start_date.strftime("%x") 
+      to
+      =reservation.end_date.strftime("%x")
+        
+    
+                                         

@@ -14,6 +14,11 @@ var tehnt = {
           "Select camping dates for " + $(this).attr("campground_name"),
           tehnt.submitReservation);
        });
+       $('.reportrange').live('click', function() {
+       tehnt.selectReportDates(
+          "Select camping dates for Report",
+          tehnt.submitReportrange);
+       });
        $('.logo').style("pointer:")
     }    
 };
@@ -21,6 +26,19 @@ var tehnt = {
 
 tehnt.selectReservationDates = function(campground_id, title, callback) {
     tehnt.currentCampgroundId = campground_id;    
+    var dialog = $('#reservation_dates').dialog({
+        modal:true,
+        width:500,
+        buttons: { "Submit" : callback},
+        beforeclose:function() {$("#ui-datepicker-div").hide();}
+    });
+
+    $('.ui-dialog-title').text(title);
+
+    dialog.dialog('open');
+};
+
+tehnt.selectReportDates = function(title, callback) {    
     var dialog = $('#reservation_dates').dialog({
         modal:true,
         width:500,
@@ -50,6 +68,40 @@ tehnt.submitReservation = function() {
               (endDate.getMonth() + 1) + "/" +
               endDate.getDate();
 };
+
+tehnt.submitReportrange = function() {
+
+    var dates = tehnt.submitReportrange.getValidDates();
+    if (!dates) return false;
+    var startDate = dates.startDate;
+    var endDate = dates.endDate;
+    
+    window.location = '/reports/start/' +
+              startDate.getFullYear() + "/" +
+              (startDate.getMonth() + 1) + "/" +
+              startDate.getDate() + "/end/" +
+              endDate.getFullYear() + "/" +
+              (endDate.getMonth() + 1) + "/" +
+              endDate.getDate();
+};
+
+tehnt.submitReportrange.getValidDates = function() {
+    var startDate = $('#startDate').datepicker('getDate');
+    var endDate = $('#endDate').datepicker('getDate');
+
+    if (!startDate || !endDate) {
+      tehnt.showMessage("Please select a Start Date and End Date.");
+      return false;
+    }
+
+    if(startDate >= endDate) {
+      tehnt.showMessage("Start date must be before the End Date.");
+      return false;
+    }
+
+    return {startDate:startDate, endDate:endDate};
+};
+
 
 tehnt.submitReservation.getValidDates = function() {
     var startDate = $('#startDate').datepicker('getDate');
