@@ -2,77 +2,62 @@
 %p
   -for campsite in @campsites
     .campsite=campsite.name 
+%br
 
 -form_for Reservation.new do |f|
   -@campsites.each do |site|
     =hidden_field :selected_campsites, site.name, :value => site.id
-  %div{:style=>"float:left; width:600px"}
-    %table
-      %tr
-        %td Group Type
-        %td=f.text_field :group_type
-      %tr
-        %td Group Number 
-        %td=f.text_field :group_number
-      %tr
-        %td Council Name
-        %td=f.text_field :council_name
-      %tr
-        %td District Name
-        %td=f.text_field :district_name
-      %tr
-        %td Other Group Name
-        %td=f.text_field :other_group_name
-      %tr
-        %td Start Date
-        %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date
-      %tr
-        %td End Date
-        %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date
-      %tr 
-      
-    %h3 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)** 
-    %h3 First Adult
-    %table
-      %tr
-        %td First Name
-        %td=text_field :reg1, :first_name
-      %tr
-        %td Last Name
-        %td=text_field :reg1, :last_name
-      %tr 
-        %td Address
-        %td=text_field :reg1, :address
-      %tr
-        %td Zip
-        %td=text_field :reg1, :zip
-      %tr
-        %td State
-        %td=text_field :reg1, :address_state
-      %tr
-        %td City
-        %td=text_field :reg1, :city   
+  %table
+    %h3 Troop, Pack or Post information
+    %tr
+      %td Group Type
+      %td=f.text_field :group_type
+    %tr
+      %td Group Number 
+      %td=f.text_field :group_number
+    %tr
+      %td Council Name
+      %td=f.text_field :council_name
+    %tr
+      %td District Name
+      %td=f.text_field :district_name
+    %tr
+      %td Other Group Name
+      %td=f.text_field :other_group_name  
+  %table
+    %h3 Number attending
+    %tr
+      %td Boys
+      %td=f.text_field :num_boys
+    %tr
+      %td Girls
+      %td=f.text_field :num_girls 
+    %tr
+      %td Adults
+      %td=f.text_field :num_adults 
+  %table
+    %h3 Dates and Times
+    %tr
+      %td Start Date
+      %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date
+    %tr
+      %td Arrival Time of day
+      %td=f.text_field :arrival_time 
+    %tr
+      %td End Date
+      %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date 
+    %tr
+      %td Departure Time of day
+      %td=f.text_field :departure_time
     
-    %table
-      %h3 Second Adult
-      %tr
-        %td First Name
-        %td=text_field :reg2, :first_name
-      %tr
-        %td Last Name
-        %td=text_field :reg2, :last_name
-      %tr 
-        %td Address
-        %td=text_field :reg2, :address
-      %tr
-        %td Zip
-        %td=text_field :reg2, :zip
-      %tr
-        %td State
-        %td=text_field :reg2, :address_state
-      %tr
-        %td City
-        %td=text_field :reg2, :city    
+  %h4 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)** 
+  %h3 First Adult
+  =render :partial => 'registrants/registrant', :locals=>{:pos => 'reg1'} 
+  %h3 Second Adult
+  =render :partial => 'registrants/registrant', :locals=>{:pos => 'reg2'}
+ 
+
+
 
   =submit_tag
      

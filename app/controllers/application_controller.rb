@@ -25,4 +25,5 @@ class ApplicationController < ActionController::Base
     end
     error_message << "</ul>"
   end
+  
 end

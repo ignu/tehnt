@@ -18,4 +18,6 @@
     -if flash[:success]
       .notice=flash[:success] 
     #container
-      = yield
+      = yield 
+  %foot
+    = render :partial => 'layouts/footer'
