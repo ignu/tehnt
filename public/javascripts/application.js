@@ -18,9 +18,14 @@ var tehnt = {
        tehnt.selectReportDates(
           "Select camping dates for Report",
           tehnt.submitReportrange);
-       });
-       $('.logo').style("pointer:")
-    }    
+       });   
+       $('#create_reservation').submit(tehnt.toc.show);
+
+       var flashText = $('div.notice').text();
+
+       if(flashText) tehnt.showMessage(flashText);
+    }
+
 };
 
 
@@ -181,6 +186,27 @@ tehnt.markAsPaid.get_payment_toggle_function = function(isPaid) {
       return false;
     };  
 };
+
+tehnt.toc = {};
+
+tehnt.toc.show = function() {  // terms and conditoins
+    var parentForm = $(this);
+    tehnt.toc.dialog = $('<div class="jquery-dialog">').dialog({
+        title:"Rules and Regulations", 
+        modal:true,
+        width:600,
+        position:'top', 
+        buttons:{            
+            Accept:function() {$('#create_reservation').unbind(); parentForm.submit();},
+            Reject:function(){tehnt.toc.dialog.dialog("destroy");}
+        }
+    });
+    tehnt.toc.dialog.css("overflow-y", "auto");
+    tehnt.toc.dialog.css("height", "300px");
+    tehnt.toc.dialog.load('/rules.html');
+    return false;
+};
+
 
 $.fn.togglePaymentStatus = function() { // orly?
     if ($(this).text().indexOf('Unpaid') > 0) {
