@@ -9,5 +9,5 @@ class ReportsController < ApplicationController
   def list
     @reservations = Reservation.for_date_requested(@start_date, @end_date) 
     render 'index'
-  end
+  end 
 end
