@@ -7,14 +7,17 @@
     -for campsite in @campsites
       %h2= campsite.name
       %span.beds= "#{campsite.beds} beds."
-      - reservations = campsite.reservations.for_date_requested(@start_date, @end_date)
-      -if reservations.empty?
-
+      - reservation = @reservations.map {|t| t if t.campsite_id == campsite.id}
+            
+      -if reservation.empty?
         %span.available=" Check to reserve "
         =check_box :selected_campsites, campsite.id
 
       -else
         RESERVED
+
+        -if true # check for admin
+          =reservation[0]
       .spacer
     =submit_tag 'Create Reservation'
 

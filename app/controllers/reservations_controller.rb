@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   
   def index
     @campsites = @campground.campsites(:include => 'reservations')
-    
+    @reservations = Reservation.for_date_requested(@start_date, @end_date)
   end 
   
   def show
