@@ -1,4 +1,3 @@
-
 .title= "Reservations for #{@campground.name}"
 -form_tag '/reservations/new', :method=> :post, :id=>'campsite_selection' do 
   =hidden_field :dates, :reservation_start_date, :value=> @start_date.to_s

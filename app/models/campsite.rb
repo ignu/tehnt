@@ -4,7 +4,7 @@ class Campsite < ActiveRecord::Base
   self.has_many(:reservations, :through => :bookings) do
     # (c <= a AND d > a) OR ( c >= a AND c < b)
     def between(starting,ending)
-      self.find(:all, {:conditions => ["(? <= start_date AND ? > start_date) OR (? >= start_date AND ? < end_date)", starting, starting, starting, ending]})
+      self.find(:all, {:conditions => ["(? <= start_date AND ? > start_date) OR (? >= start_date AND ? < end_date)", starting, ending, starting, starting]})
     end
   end
 end
