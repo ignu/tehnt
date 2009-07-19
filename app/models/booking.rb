@@ -2,6 +2,10 @@ class Booking < ActiveRecord::Base
   belongs_to :campsite
   belongs_to :reservation
   
+  def self.between(starting,ending)
+    self.find(:all, :include => 'reservation', :conditions => ["(? <= reservations.start_date AND ? > reservations.start_date) OR (? >= reservations.start_date AND ? < reservations.end_date)", starting, ending, starting, starting])
+  end
+    
   def primary_registrant
     self.reservation.registrants.first
   end
