@@ -7,7 +7,7 @@
     -for campsite in @campsites
       %h2= campsite.name
       %span.beds= "#{campsite.beds} beds."
-      - reservations = campsite.reservations.for_date_requested(@start_date, @end_date)
+      - reservations = campsite.reservations.between(@start_date, @end_date)
       -if reservations.empty?
 
         %span.available=" Check to reserve "
