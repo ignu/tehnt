@@ -54,9 +54,21 @@ class ReservationsController < ApplicationController
     end
   end
   
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    if @reservation == nil
+      flash[:notice] = "Reservation not found"
+    else
+      Reservation.destroy(params[:id])
+      flash[:notice] = "Reservation deleted"
+    end
+    redirect_to :back
+  end
+  
   protected
   
   def find_campground
     @campground = Campground.find(params[:campground_id])
   end
+
 end
