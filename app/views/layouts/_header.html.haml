@@ -1,5 +1,6 @@
 .logo=image_tag ("logo_small.jpg")
-.nav
-  =link_to 'home', "/" 
-  =link_to 'logout', "/logout" if admin?
-  = yield :admin_nav
+-if admin?
+  .nav{:style=>'padding-left:90px'}
+    =link_to 'home', "/"
+    =link_to 'logout', "/logout" if admin?
+    = yield :admin_nav

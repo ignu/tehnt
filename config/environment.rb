@@ -12,7 +12,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :lib => 'haml'
   #config.gem 'chriseppstein-compass', :lib => 'compass', :source=>"http://gems.github.com"
   #config.gem 'authlogic', :lib => false
-  config.gem 'fastercsv'
+  #config.gem 'fastercsv'
 
 # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
