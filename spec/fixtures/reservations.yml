@@ -7,8 +7,8 @@ res1:
   council_name: Bobs Pack
   district_name: sector 7
   other_group_name: none
-  start_date: 2009-07-1
-  end_date: 2009-07-7
+  start_date: 2009-07-01
+  end_date: 2009-07-07
   campsite_id: 1
 res2:
   id: 2
@@ -17,8 +17,8 @@ res2:
   council_name: Johns Pack
   district_name: sector 8
   other_group_name: none
-  start_date: 2009-07-5
-  end_date: 2009-07-7
+  start_date: 2009-07-05
+  end_date: 2009-07-07
   campsite_id: 1
 res3:
   id: 3

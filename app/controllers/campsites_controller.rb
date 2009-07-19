@@ -10,16 +10,17 @@ class CampsitesController < ApplicationController
     @campgrounds = Campground.all
   end
 
-    def save
-    @campsite = Campsite.new(self.params[:campsite])
+  def update
+    @campsite = Campsite.find self.params[:id]
+    @campsite.update_attributes(self.params[:campsite])
     @campsite.save!
-    redirect_to "/campgrounds/#{@campsite.name}/campsites"
-    end
+    redirect_to "/campgrounds/#{@campsite.campground.name}/campsites"
+  end
 
-  def save
+  def create
     @campsite = Campsite.new(self.params[:campsite])    
     @campsite.save!
-    redirect_to "/campgrounds/#{@campsite.name}/campsites"
+    redirect_to "/campgrounds/#{@campsite.campground.name}/campsites"
   end
 
   def index

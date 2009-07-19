@@ -3,8 +3,15 @@
 
 #campgrounds
 - @campground.campsites.each do |campsite|
-  %h2= campsite.name
-  %span.description= campsite.beds
-  %span.description= campsite.price
+  .field    
+    %h2= campsite.name
+
+  .field
+    %label Beds
+    %span.description= campsite.beds
+
+  .field
+    %label Price
+    %span.description= campsite.price
 
   %a{:href=>"/campsites/edit/#{campsite.id}"}edit
