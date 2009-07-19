@@ -24,6 +24,11 @@ var tehnt = {
        var flashText = $('div.notice').text();
 
        if(flashText) tehnt.showMessage(flashText);
+
+       $('.nav').css('padding-top', '15px');
+       $('.nav').css('padding-bottom', '10px');
+
+
     }
 
 };
@@ -99,7 +104,7 @@ tehnt.submitReportrange.getValidDates = function() {
       return false;
     }
 
-    if(startDate >= endDate) {
+    if(startDate > endDate) {
       tehnt.showMessage("Start date must be before the End Date.");
       return false;
     }
@@ -117,7 +122,7 @@ tehnt.submitReservation.getValidDates = function() {
       return false;
     }
 
-    if(startDate >= endDate) {
+    if(startDate > endDate) {
       tehnt.showMessage("Start date must be before the End Date.");
       return false;
     }
