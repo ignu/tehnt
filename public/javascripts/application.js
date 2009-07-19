@@ -14,6 +14,7 @@ var tehnt = {
           "Select camping dates for " + $(this).attr("campground_name"),
           tehnt.submitReservation);
        });
+       $('.logo').style("pointer:")
     }    
 };
 

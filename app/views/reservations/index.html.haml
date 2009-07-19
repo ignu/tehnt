@@ -24,48 +24,40 @@
         =check_box :selected_campsites, campsite.id
 
       -else
+        -for reservation in reservations
+          %b="Reserved: #{reservation.end_date.strftime("%m/%d/%Y")} - #{reservation.start_date.strftime("%m/%d/%Y")}"
+          -if admin?
+            .admininfo
+              .right
+                .info
+                  ="Group Number  #{reservation.group_number}"
+                .info
+                  ="Council Name #{reservation.council_name}"
+              .right
+                .info
+                  ="District Name #{reservation.district_name}"
+                .info
+                  ="Other Group Name #{reservation.other_group_name}"
+                .info
+                  ="Group Type #{reservation.group_type}"
 
-        -if admin?
-          .admininfo
-            .right
-              -reservation = reservations[0]
-              .info
-              .info
-                ="Group Number  #{reservation.group_number}"
-              .info
-                ="Council Name #{reservation.council_name}"
-            .right
-              .info
-                ="District Name #{reservation.district_name}"
-              .info
-                ="Other Group Name #{reservation.other_group_name}"
-              .info
-                ="Group Type #{reservation.group_type}"
+              .div
+                .info
+                  %b="Paid in Full: #{reservation.paid_in_full ? 'yes' : 'no'}"
+              -for registrant in reservation.registrants
+                .spacer &nbsp;
+                .info
+                  %b
+                    =registrant.first_name
+                    =registrant.last_name
+                  %i=registrant.position
+                .info
+                  ="#{registrant.address} #{registrant.city}, #{registrant.address_state} #{registrant.zip}"
+                .info
+                  ="#{registrant.phone}"
 
-            .div
-              .info
-                %b="Paid in Full: #{reservation.paid_in_full ? 'yes' : 'no'}"
-              .info
-                ="Start Date #{reservation.start_date.strftime("%m/%d/%Y")}"
-              .info
-                ="End Date #{reservation.end_date.strftime("%m/%d/%Y")}"
-
-            -for registrant in reservation.registrants
-              .spacer &nbsp;
-              .info
-                %b
-                  =registrant.first_name
-                  =registrant.last_name
-                %i=registrant.position
-              .info
-                ="#{registrant.address} #{registrant.city}, #{registrant.address_state} #{registrant.zip}"
-              .info
-                ="#{registrant.phone}"
-
-          -if !reservation.paid_in_full
-            %button.not_paid{:reservation_id=>reservation.id} Mark As Paid
-          -else
-            %button.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
-        -else
-          RESERVED!      
+            -if !reservation.paid_in_full
+              %button.not_paid{:reservation_id=>reservation.id} Mark As Paid
+            -else
+              %button.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
     =submit_tag 'Create Reservation'
