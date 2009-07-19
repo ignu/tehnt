@@ -32,6 +32,7 @@ describe Booking do
       campsite_included_data    = %w(name)
       campground_included_data  = %w(name)
       
+      # mocks
       mock_registrant = mock(Registrant, {
         :first_name => 'Guy',
         :last_name  => 'Personson',
@@ -75,6 +76,7 @@ describe Booking do
         
       })
       
+      # expectations
       reservation_included_data.each do |attribute|
         reservation.should_receive(attribute)
       end
