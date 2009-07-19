@@ -11,8 +11,9 @@
       =link_to "edit", "campgrounds/edit/#{campground.id}"
       =link_to "delete", "campgrounds/#{campground.id}", :method => :delete, :confirm => 'Are you sure you want to delete'
       =link_to 'list campsites', "/campgrounds/#{campground.name}/campsites"
+    %p
 = render :partial => 'layouts/datepicker'
 
 -if admin?
   - content_for :admin_nav do
-    = link_to 'New Campground', '/campgrounds/new' 
+    = link_to 'New Campground', '/campgrounds/new'

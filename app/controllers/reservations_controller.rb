@@ -62,7 +62,7 @@ class ReservationsController < ApplicationController
       flash[:notice] = "Reservation not found"
     else
       Reservation.destroy(params[:id])
-      flash[:notice] = "Reservation deleted"
+      flash[:notice] = "Reservation ##{params[:id]} deleted"
     end
     redirect_to :back
   end

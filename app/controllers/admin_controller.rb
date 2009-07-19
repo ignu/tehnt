@@ -3,13 +3,13 @@ class AdminController < ApplicationController
   
   def login
     session[:admin] = "true"
-    flash[:success] = "You are now logged in as admin"
+    flash[:success] = "You are logged in as Administrator"
     redirect_to '/'
   end
   
   def logout
     session[:admin] = nil
-    flash[:success] = "You are now logged out in as admin"
+    flash[:success] = "You are logged out"
     redirect_to '/'
   end 
   
