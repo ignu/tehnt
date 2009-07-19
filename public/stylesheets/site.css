@@ -863,4 +863,25 @@ hr.space {
     z-index:2009;
 }
 
-a { cursor:pointer;}
+a { cursor:pointer; text-decoration:none; color: #1D345F; font-weight:bold;}
+
+.admininfo {
+    background-color:#99F;
+    padding:6px;
+    margin:4px;
+    width:450px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+    margin-left:20px;
+}
+
+a.reservation { font-style:italic; font -weight:normal;}
+div.spacer { height:7px;}
+
+div.heading {font-size:16px;}
