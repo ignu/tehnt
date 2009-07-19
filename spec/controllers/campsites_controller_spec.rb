@@ -12,7 +12,7 @@ describe CampsitesController do
     end
 
     it { should assign_to(:campsite)     }
-    it { should assign_to(:campgrounds)     }
+    it { should assign_to(:campgrounds)  }
     it { should render_template(:edit)   }
     it { should respond_with(:success)   }
   end

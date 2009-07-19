@@ -2,7 +2,7 @@ class CampsitesController < ApplicationController
   def new 
     @campsite = Campsite.new
     @campgrounds = Campground.all
-    render "edit"    
+    render "edit"
   end
 
   def edit
@@ -10,7 +10,13 @@ class CampsitesController < ApplicationController
     @campgrounds = Campground.all
   end
 
-  def save       
+    def save
+    @campsite = Campsite.new(self.params[:campsite])
+    @campsite.save!
+    redirect_to "/campgrounds/#{@campsite.name}/campsites"
+    end
+
+  def save
     @campsite = Campsite.new(self.params[:campsite])    
     @campsite.save!
     redirect_to "/campgrounds/#{@campsite.name}/campsites"
