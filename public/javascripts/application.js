@@ -8,6 +8,7 @@ var tehnt = {
        item.find('.date').datepicker();
        $("#ui-datepicker-div").addClass("promoteZ");
        tehnt.wire_campsite_selection_validation();
+       tehnt.markAsPaid.init();
        $('.reservation').live('click', function() {
        tehnt.selectReservationDates($(this).attr("campground_id"),
           "Select camping dates for " + $(this).attr("campground_name"),
@@ -104,3 +105,38 @@ $(function() {
 
 
 
+tehnt.markAsPaid = {}
+tehnt.markAsPaid.init = function() {
+    $('.not_paid').live('click', tehnt.markAsPaid.get_payment_toggle_function(true));
+    $('.paid_in_full').live('click', tehnt.markAsPaid.get_payment_toggle_function(false));
+
+};
+
+tehnt.markAsPaid.get_payment_toggle_function = function(isPaid) {
+    var paid = isPaid;
+    return function() {
+        var reservation_id = $(this).attr("reservation_id");
+        var element = $(this);  // sry, 2hr sleep can no think mor
+       $.ajax({
+          url: "/reservations/set_paid/" +reservation_id,
+          dataType:"text",
+          data:{reservation_id : reservation_id, value:paid},
+          error:function() {tehnt.showMessage("Error.");},
+          success:function(message) { tehnt.showMessage(message); element.togglePaymentStatus();},
+          type:'POST'
+       });
+    };
+};
+
+$.fn.togglePaymentStatus = function() { // orly?
+    if ($(this).text().indexOf('Unpaid') > 0) {
+        $(this).text("Mark as Paid");
+        $(this).addClass("not_paid");
+        $(this).removeClass("paid_in_full");
+    }
+    else {
+        $(this).text("Mark as Unpaid");
+        $(this).removeClass("not_paid");
+        $(this).addClass("paid_in_full");
+    }
+};

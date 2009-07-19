@@ -862,3 +862,5 @@ hr.space {
     font-size:1.5em;
     z-index:2009;
 }
+
+a { cursor:pointer;}
