@@ -10,6 +10,8 @@
   =hidden_field :dates, :reservation_end_date, :value=> @end_date.to_s
   .campsites
     -for campsite in @campsites
+      %br
+      %br
       %h3= campsite.name
 
       -if !admin?
