@@ -36,9 +36,9 @@ describe CampsitesController do
 
       @campground = mock_model(Campground)
       #todo: figure out why this fails, think the with block doesn't match
-      Campground.should_receive(:find_by_name).with("wut", :include=>'campsites').and_return(@campground)
+      Campground.should_receive(:find_by_name!).with("wut", :include=>'campsites').and_return(@campground)
 
-      get "/campgrounds/wut/campsites/"
+      get(:index, {:campground_name => 'wut'})
     end
 
     it { should assign_to(:campground)}
@@ -56,7 +56,7 @@ describe CampsitesController do
    end
 
    it "connects /campgrounds/:campground_name/campsites/ to list" do
-     puts params_from(:get, "/campgrounds/boo/campsites/").should ==
+     params_from(:get, "/campgrounds/boo/campsites/").should ==
              {:controller => 'campsites', :action => 'index', :campground_name => 'boo'}
 
     end

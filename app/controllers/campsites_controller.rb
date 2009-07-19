@@ -24,7 +24,7 @@ class CampsitesController < ApplicationController
   end
 
   def index
-    @campground = Campground.find_by_name(self.params[:campground_name],
+    @campground = Campground.find_by_name!(self.params[:campground_name],
       :include => 'campsites')
     render "list"
   end
