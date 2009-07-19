@@ -15,7 +15,8 @@
       -if !admin?
         %div.beds
           = "#{campsite.beds} beds."
-          = "$#{campsite.price}"
+          = "in council $#{campsite.price}, out of council $#{campsite.ooc_price ? campsite.ooc_price : 'na'}"
+          
       
       - reservations = campsite.reservations.between(@start_date, @end_date)
       -if reservations.empty?
