@@ -894,3 +894,28 @@ div.notice { display:none;}
 .summary{background-color:#DDD; padding:10px;}
 
 button.reservation {margin-top: 6px;}
+
+ul.campsites {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	float: left;
+	width: 100%;
+}
+
+ul.campsites li { display: inline; }
+
+ul.campsites li div
+{
+  float: left;
+  width: 250px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+}
+
+ul.campsites li a:hover
+{
+  background-color: #ffffdf;
+  color: #000;
+}
