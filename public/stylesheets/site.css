@@ -50,7 +50,7 @@ body {
   line-height: 1.5;
   font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
   color: #333333;
-  font-size: 75%; }
+  font-size: 80%; }
 
 h1 {
   font-weight: normal;
@@ -903,19 +903,36 @@ ul.campsites {
 	width: 100%;
 }
 
-ul.campsites li { display: inline; }
+ul.campsites li { display: inline; margin-top:5px; padding:2px; }
 
 ul.campsites li div
 {
   float: left;
   width: 250px;
+  height:90px;
   padding: 10px 10px;
   text-decoration: none;
   border-right: 1px solid #fff;
+  margin:15px;
 }
 
-ul.campsites li a:hover
-{
+
+ul.campsites li div.available:hover {
   background-color: #ffffdf;
   color: #000;
+  cursor:pointer;
+  outline:2px solid gray;
+}
+
+ul.campsites li div.selected {
+  background-image: url('/images/checkmark.png');
+  background-repeat:no-repeat;
+}
+
+.clear {
+    clear:both;
+}
+
+div.campsiteList {
+    width:95%;
 }

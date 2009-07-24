@@ -1,10 +1,12 @@
 
+
 var log = function(message) { // don't error if the browser doesn't run firebug
     if (console) console.log(message);
 };
 
 var tehnt = {
     init: function(item) {
+       tehnt.campsiteSelection.init();
        item.find('.date').datepicker();
        $("#ui-datepicker-div").addClass("promoteZ");
        tehnt.wire_campsite_selection_validation();
@@ -27,12 +29,17 @@ var tehnt = {
 
        $('.nav').css('padding-top', '15px');
        $('.nav').css('padding-bottom', '10px');
-
-
     }
-
 };
 
+
+tehnt.campsiteSelection = {
+    init : function()  {
+        $('ul.campsites li div.available').live('click', function() {
+            $(this).toggleClass('selected');
+        });
+    }
+};
 
 tehnt.selectReservationDates = function(campground_id, title, callback) {
     tehnt.currentCampgroundId = campground_id;    

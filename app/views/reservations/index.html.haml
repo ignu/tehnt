@@ -12,21 +12,16 @@
     -for campsite in @campsites
       
       %li
-        .container
+        -reservations = campsite.reservations.between(@start_date, @end_date)
+        -divClass = reservations.empty? ? 'available' : 'reserved'
+        %div{:class=>divClass}
           %h3= campsite.name
-
           -if !admin?
-            %div.beds
-              = "#{campsite.beds} beds."
-              = "in council $#{campsite.price}, out of council $#{campsite.ooc_price ? campsite.ooc_price : 'na'}"
+            = "#{campsite.beds} beds."
+            = "In council: $#{campsite.price} Out of council: $#{campsite.ooc_price ? campsite.ooc_price : 'na'}"
 
 
-          - reservations = campsite.reservations.between(@start_date, @end_date)
-          -if reservations.empty?
-            %span.available=" Check to reserve "
-            =check_box :selected_campsites, campsite.id
-
-          -else
+          -if !reservations.empty?
             -for reservation in reservations
               .div
                 %b="Reserved: #{reservation.end_date.strftime("%m/%d/%Y")} - #{reservation.start_date.strftime("%m/%d/%Y")}"
@@ -66,4 +61,5 @@
                     %button.not_paid{:reservation_id=>reservation.id} Mark As Paid
                   -else
                     %button.paid_in_full{:reservation_id=>reservation.id} Mark As Unpaid
+    .clear
     =submit_tag 'Create Reservation'
