@@ -1,7 +1,7 @@
 
 
 var log = function(message) { // don't error if the browser doesn't run firebug
-    if(console) console.log(message);
+    try{console.log(message);} catch(ex) { };
 };
 
 var tehnt = {
@@ -195,7 +195,11 @@ tehnt.markAsPaid.get_payment_toggle_function = function(isPaid) {
           dataType:"text",
           data:{reservation_id : reservation_id, value:paid},
           error:function() {tehnt.showMessage("Error.");},
-          success:function(message) { tehnt.showMessage(message); element.togglePaymentStatus();},
+          success:function(message) {
+              tehnt.showMessage(message);
+              element.togglePaymentStatus();
+              $('#paidInFullStatus' + reservation_id).text(paid? 'yes': 'no');
+          },
           type:'POST'
        });
       return false;
@@ -244,7 +248,6 @@ $.fn.validate = function() {
     var valid = true;
     $(this).each(function() {
          var field = $(this);
-         log('validating' + $(this).attr('name'))
          if (!field.val()) {
              if (!alertFirst) alertFirst = function() {
                  tehnt.showMessage(field.attr('message'));

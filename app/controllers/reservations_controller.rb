@@ -4,8 +4,11 @@ class ReservationsController < ApplicationController
   before_filter :get_end_date, :only => [:index]
   
   def index
-    @campsites = @campground.campsites(:include => 'reservations')
+    @campsites = @campground.campsites
     @reservations = Reservation.for_date_requested(@start_date, @end_date)
+    if admin? 
+      render "index_admin"
+    end
   end 
   
   def show

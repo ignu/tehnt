@@ -46,5 +46,9 @@ class ApplicationController < ActionController::Base
       logger.info "End date = #{@end_date}"
       # @end_date = Date.new(params[:e_year], params[:e_month], params[:e_day])   
     end
+
+    def admin?
+      session[:admin] == "true"
+    end
   
 end
