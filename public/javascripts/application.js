@@ -1,7 +1,7 @@
 
 
 var log = function(message) { // don't error if the browser doesn't run firebug
-    if (console) console.log(message);
+    alert(message);
 };
 
 var tehnt = {
@@ -156,16 +156,27 @@ tehnt.showMessage = function(data) {
     setTimeout("$('#" + messageID + "').fadeOut('fast');", 4200);
 };
 
-
 tehnt.wire_campsite_selection_validation = function() {
     $('#campsite_selection').submit(function() {
-       if(!$('#campsite_selection input:checkbox:checked').length) {
+        var selectedCampsites = $('#campsite_selection ul li div.selected');
+
+        if(!selectedCampsites.length) {
            tehnt.showMessage("At least one campsite must be selected!");
            return false;
        }
+
+       //var newForm = $('<form action="/reservations/new" method="post" id="new_form">');
+
+        var campsites = "";
+        selectedCampsites.each(function() {
+          campsites += $(this).attr("campsiteId") + ",";
+        });
+
+        $("#campsite_selection").append('<input type="hidden" name="selected_campsites" value="' + campsites + '">');
+
     });
 }
-
+                 
 
 $(function() {
    tehnt.init($('body'));

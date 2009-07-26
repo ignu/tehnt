@@ -13,10 +13,13 @@ class ReservationsController < ApplicationController
   
   def new
     @campsites = []
-    params[:selected_campsites].keys.each do |key|
-      logger.info "params key #{key} #{params[:selected_campsites][key]}"
-      @campsites << Campsite.find(key) if params[:selected_campsites][key] == "1"
-    end
+    selected_campsites = params[:selected_campsites].split(",")
+
+      selected_campsites.each do |site|
+        @campsites << Campsite.find(site.to_i)
+        
+      end
+
     if @campsites
       @reservation_start_date = params[:dates][:reservation_start_date].to_date
       @reservation_end_date = params[:dates][:reservation_end_date].to_date

@@ -14,7 +14,7 @@
       %li
         -reservations = campsite.reservations.between(@start_date, @end_date)
         -divClass = reservations.empty? ? 'available' : 'reserved'
-        %div{:class=>divClass}
+        %div{:class=>divClass, :campsiteId=>campsite.id}
           %h3= campsite.name
           -if !admin?
             = "#{campsite.beds} beds."
