@@ -936,3 +936,7 @@ ul.campsites li div.selected {
 div.campsiteList {
     width:95%;
 }
+
+.invalid {
+    border:2px solid #550000;
+}

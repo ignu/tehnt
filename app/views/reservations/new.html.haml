@@ -13,30 +13,30 @@
     %h3 Troop, Pack or Post information
     %tr
       %td Group Type
-      %td=f.text_field :group_type
+      %td=f.text_field :group_type, :class=>'required', :message=>'Group Type Required'
     %tr
       %td Group Number 
-      %td=f.text_field :group_number
+      %td=f.text_field :group_number, :class=>'required', :message=>'Group Number Required'
     %tr
       %td Council Name
-      %td=f.text_field :council_name, :value => 'Great Sauk Trail'
+      %td=f.text_field :council_name, :value => 'Great Sauk Trail', :class=>'required', :message=>'Council Name Required'
     %tr
       %td District Name
-      %td=f.text_field :district_name
+      %td=f.text_field :district_name, :class=>'required', :message=>'District Name Required'
     %tr
       %td Other Group Name
-      %td=f.text_field :other_group_name  
+      %td=f.text_field :other_group_name
   %table
     %h3 Number attending
     %tr
       %td Boys
-      %td=f.text_field :num_boys
+      %td=f.text_field :num_boys, :class=>'required', :message=>'Number of Boys attending Required'
     %tr
       %td Girls
       %td=f.text_field :num_girls 
     %tr
       %td Adults
-      %td=f.text_field :num_adults 
+      %td=f.text_field :num_adults, :class=>'required', :message=>'Number of Adults Attending Required'
   %table
     %h3 Dates and Times
     / %tr
@@ -44,13 +44,13 @@
     /   %td=f.date_select :start_date, :start_year => (Date.today.year), :default => @reservation_start_date 
     %tr
       %td Arrival Time of day
-      %td=f.text_field :arrival_time 
+      %td=f.text_field :arrival_time, :class=>'required', :message=>'Arrival Time Required'
     / %tr
     /   %td End Date
     /   %td=f.date_select :end_date, :start_year => (Date.today.year), :default => @reservation_end_date   
     %tr
       %td Departure Time of day
-      %td=f.text_field :departure_time
+      %td=f.text_field :departure_time, :class=>'required', :message=>'Departure Time Required'
     
   %h4 ** RESPONSIBLE ADULTS IN CHARGE AT CAMP (YOU MUST HAVE AT LEAST TWO)**
   %h3 First Adult
@@ -59,7 +59,7 @@
   =render :partial => 'registrants/registrant', :locals=>{:pos => 'reg2'}
  
 
-
+                                                                                               
 
   =submit_tag
      

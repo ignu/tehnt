@@ -1,15 +1,16 @@
 
 
 var log = function(message) { // don't error if the browser doesn't run firebug
-    alert(message);
+    if(console) console.log(message);
 };
 
 var tehnt = {
     init: function(item) {
+       $('.required').blur($(this).validate);
        tehnt.campsiteSelection.init();
        item.find('.date').datepicker();
        $("#ui-datepicker-div").addClass("promoteZ");
-       tehnt.wire_campsite_selection_validation();
+       tehnt.submit_campsite_selection();
        tehnt.markAsPaid.init();
        $('.reservation').live('click', function() {
        tehnt.selectReservationDates($(this).attr("campground_id"),
@@ -156,41 +157,32 @@ tehnt.showMessage = function(data) {
     setTimeout("$('#" + messageID + "').fadeOut('fast');", 4200);
 };
 
-tehnt.wire_campsite_selection_validation = function() {
-    $('#campsite_selection').submit(function() {
-        var selectedCampsites = $('#campsite_selection ul li div.selected');
 
-        if(!selectedCampsites.length) {
+tehnt.submit_campsite_selection = function() {
+    $('#campsite_selection').submit(function() {
+       var selectedCampsites = $('#campsite_selection ul li div.selected');
+
+       if(!selectedCampsites.length) {
            tehnt.showMessage("At least one campsite must be selected!");
            return false;
        }
 
-       //var newForm = $('<form action="/reservations/new" method="post" id="new_form">');
+       var campsites = "";
+       selectedCampsites.each(function() {campsites += $(this).attr("campsiteId") + ",";});
 
-        var campsites = "";
-        selectedCampsites.each(function() {
-          campsites += $(this).attr("campsiteId") + ",";
-        });
-
-        $("#campsite_selection").append('<input type="hidden" name="selected_campsites" value="' + campsites + '">');
+       $("#campsite_selection").append('<input type="hidden" name="selected_campsites" value="' + campsites + '">');
 
     });
 }
-                 
 
 $(function() {
    tehnt.init($('body'));
 });
 
-
-
-
-
-tehnt.markAsPaid = {}
+tehnt.markAsPaid = {};
 tehnt.markAsPaid.init = function() {
     $('.not_paid').live('click', tehnt.markAsPaid.get_payment_toggle_function(true));
     $('.paid_in_full').live('click', tehnt.markAsPaid.get_payment_toggle_function(false));
-
 };
 
 tehnt.markAsPaid.get_payment_toggle_function = function(isPaid) {
@@ -214,6 +206,7 @@ tehnt.toc = {};
 
 tehnt.toc.show = function() {  // terms and conditoins
     var parentForm = $(this);
+    if (!parentForm.validateForm()) return false;
     tehnt.toc.dialog = $('<div class="jquery-dialog">').dialog({
         title:"Rules and Regulations", 
         modal:true,
@@ -242,4 +235,38 @@ $.fn.togglePaymentStatus = function() { // orly?
         $(this).removeClass("not_paid");
         $(this).addClass("paid_in_full");
     }
+};
+
+
+$.fn.validate = function() {
+    try{
+    var alertFirst;
+    var valid = true;
+    $(this).each(function() {
+         var field = $(this);
+         log('validating' + $(this).attr('name'))
+         if (!field.val()) {
+             if (!alertFirst) alertFirst = function() {
+                 tehnt.showMessage(field.attr('message'));
+                 field.focus();
+             };
+             field.addClass('invalid');
+             valid = false;
+         } else {
+             field.removeClass('invalid');
+         }
+    });
+    if(alertFirst) alertFirst();
+    }
+    catch (e) {
+        tehnt.showMessage(e);
+        return false;
+    }
+
+        return valid;
+};
+
+$.fn.validateForm = function() {
+  var form = $(this);
+  return form.find('.required').validate();
 };

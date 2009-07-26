@@ -1,25 +1,28 @@
 %table
   %tr
     %td First Name
-    %td=text_field pos, :first_name
+    %td=text_field pos, :first_name, :class=>'required', :message=>'First Name Required'
   %tr
     %td Last Name
-    %td=text_field pos, :last_name
+    %td=text_field pos, :last_name, :class=>'required', :message=>'Last Name Required'
   %tr 
     %td Address
-    %td=text_field pos, :address
+    %td=text_field pos, :address, :class=>'required', :message=>'Address Required'
   %tr
     %td City
-    %td=text_field pos, :city 
+    %td=text_field pos, :city, :class=>'required', :message=>'City Required'
   %tr
     %td State
-    %td=text_field pos, :address_state
+    %td=text_field pos, :address_state, :class=>'required', :message=>'State Required'
   %tr
     %td Zip
-    %td=text_field pos, :zip
+    %td=text_field pos, :zip, :class=>'required', :message=>'Zip Required'
   %tr
     %td Phone
-    %td=text_field pos, :phone
+    %td=text_field pos, :phone, :class=>'required', :message=>'Phone Required'
+  %tr
+    %td Email
+    %td=text_field pos, :email, :class=>'required', :message=>'Email Required'
   %tr
     %td Position
-    %td=text_field pos, :position 
+    %td=text_field pos, :position, :class=>'required', :message=>'Position Required'
