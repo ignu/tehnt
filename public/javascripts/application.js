@@ -1,7 +1,7 @@
 
 
 var log = function(message) { // don't error if the browser doesn't run firebug
-    try{console.log(message);} catch(ex) { };
+    //try{console.log(message);} catch(ex) { };
 };
 
 var tehnt = {
