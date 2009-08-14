@@ -1,4 +1,5 @@
 
+var isAdmin = false;
 
 var log = function(message) { // don't error if the browser doesn't run firebug
     //try{console.log(message);} catch(ex) { };
@@ -139,7 +140,7 @@ tehnt.submitReservation.getValidDates = function() {
     // HACK: should get this server site
     var cutoff_date =new Date(new Date().setDate(new Date().getDate()+3));
 
-    if (startDate < cutoff_date) {
+    if (startDate < cutoff_date && !isAdmin) {
       tehnt.showMessage("Reservations must be made at least three days in advance.");
       return false;
     }
@@ -160,7 +161,8 @@ tehnt.showMessage = function(data) {
 
 tehnt.submit_campsite_selection = function() {
     $('#campsite_selection').submit(function() {
-       var selectedCampsites = $('#campsite_selection ul li div.selected');
+       var selectedCampsites = $('#campsite_selection ul li div.selected')
+               .add('input:checkbox:checked');
 
        if(!selectedCampsites.length) {
            tehnt.showMessage("At least one campsite must be selected!");

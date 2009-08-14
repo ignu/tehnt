@@ -16,7 +16,7 @@
       - reservations = campsite.reservations.between(@start_date, @end_date)
       -if reservations.empty?
         %span.available=" Check to reserve "
-        =check_box :selected_campsites, campsite.id
+        =check_box :selected_campsites, campsite.id, {:campsiteId => campsite.id}
 
       -else
         -for reservation in reservations

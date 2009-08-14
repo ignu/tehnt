@@ -18,6 +18,9 @@
     -if flash[:success]
       .notice=flash[:success] 
     #container
-      = yield 
+      = yield
+    -if admin?
+      :javascript
+        var isAdmin = true
   %foot
     = render :partial => 'layouts/footer'
